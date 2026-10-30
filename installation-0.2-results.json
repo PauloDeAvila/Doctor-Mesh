@@ -1,0 +1,16 @@
+{
+  "version": [
+    0,
+    2,
+    0
+  ],
+  "enabled": true,
+  "reloaded": true,
+  "installed_files_match": true,
+  "files": 22,
+  "meshes_preserved": 688,
+  "scene_camera_engine_selection_preserved": true,
+  "blend_file_saved": false,
+  "default_capture_profile": "quick",
+  "reuse_measurements": true
+}

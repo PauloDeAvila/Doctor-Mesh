@@ -1,12 +1,11 @@
 # STATE — Doctor Mesh
 
-- **Estado Geral:** Fase de Planejamento Detalhado e Arquitetura Concluída (Operação restrita à pasta `docs/`)
+- **Estado Geral:** Base de Código v0.2.0 Importada e Auditada; Roadmap Atualizado
 - **Último Marco Concluído:**
-  - Extração e análise integral da especificação conceitual do projeto (*AI Mesh Doctor / Doctor Mesh*).
-  - Atualização completa de `docs/project/PROJECT.md` (Requisitos e Regras Inegociáveis).
-  - Atualização completa de `docs/project/ARCHITECTURE.md` (Pipeline em 6 Estágios, Desacoplamento Headless e Backends CPU/CUDA).
-  - Atualização completa de `docs/project/PLAN.md` (Roadmap detalhado com 3 Grandes Entregas, 12 Fases e Checklist TO-DO com critérios de aceitação).
-  - Atualização de `docs/project/DECISIONS.md` (Registros DEC-001 a DEC-004).
-- **Bloco Atual em Espera:** Fase 1 — Bloco 1.1 (Definição de Ambiente e Dependências Base).
-- **Restrição Vigente:** O usuário ordenou: *"por enquanto mexa apenas na pasta docs para planejar antes de executar"*. Nenhuma pasta de código (`mesh_core`, `blender_addon`, etc.) foi criada ainda.
-- **Próximo Passo Exato:** Aguardar a revisão do usuário sobre o planejamento estruturado em `docs/`. Uma vez aprovado para iniciar a execução de código, avançar imediatamente para a **Fase 1 (Ambiente, Dependências Mínimas e MeshModel Headless)**.
+  - Código-fonte do `ai_mesh_doctor` v0.2.0 copiado com sucesso para a raiz do repositório (`ai_mesh_doctor/`, `tests/`, `scripts/`, `examples/`, `docs/`, `project/`).
+  - Auditoria completa dos módulos realizada (`scanner.py`, `geometry.py`, `repair.py`, `quality.py`, `ui.py`, etc.).
+  - Eliminação/conclusão de mais de 20 tópicos no `docs/project/PLAN.md` que já haviam sido implementados e testados (Fases 1, 4, 10 e 11 consolidadas).
+  - Atualização de `docs/project/DECISIONS.md` com o registro [DEC-005].
+- **Bloco Atual em Andamento:** **Entrega A — Fase 5: Reconhecimento e Ajuste Robusto de Cilindros Deformados**.
+  - O código existente já possui ajuste de planos via PCA (`measured_plane`) e projeção (`fit_plane`), mas ainda carece de detecção e projeção automática para superfícies cilíndricas deformadas.
+- **Próximo Passo Exato:** Implementar o estimador de cilindro robusto (eixo diretor, centro e raio $r$) e a operação de projeção cilíndrica com preservação de bordas para complementar o `repair.py`.

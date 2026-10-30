@@ -1,0 +1,95 @@
+{
+  "status": "complete",
+  "fingerprint": "05ee58e94a5bee6e1dd4f3543ff60827f6035eac8bfc34e57c82713f08ff5e73",
+  "vertices": 384,
+  "edges": 768,
+  "faces": 384,
+  "polygon_distribution": {
+    "4": 384
+  },
+  "edge_length_world": {
+    "min": 0.022903282195329666,
+    "max": 0.8999999761581421,
+    "mean": 0.28972358446723473
+  },
+  "face_area_world": {
+    "min": 0.0058862678706645966,
+    "max": 0.03239200636744499,
+    "mean": 0.016194368981814478
+  },
+  "planarity_deviation_world": {
+    "min": 0.0,
+    "max": 1.1920928955078125e-07,
+    "mean": 1.6025296645238996e-08
+  },
+  "edge_ratio": {
+    "min": 8.73230624095249,
+    "max": 39.2956768589991,
+    "mean": 20.441624206958846
+  },
+  "dihedral_angle_radians": {
+    "min": 0.0,
+    "max": 1.5707964897155762,
+    "mean": 0.801760584465228
+  },
+  "sharp_edges": 0,
+  "normal_summary": {
+    "space": "world",
+    "face_length": {
+      "min": 0.9999998956918662,
+      "max": 1.0000000894069632,
+      "mean": 0.9999999968825547
+    }
+  },
+  "boundary_edge_count": 0,
+  "radial_edge_count": 0,
+  "nonmanifold_vertex_count": 0,
+  "degenerate_face_count": 0,
+  "winding_edge_count": 0,
+  "loose_edge_count": 0,
+  "loose_vertex_count": 0,
+  "duplicate_pair_count": 0,
+  "duplicate_count_is_lower_bound": false,
+  "island_count": 1,
+  "shells": [
+    {
+      "vertices": 384,
+      "faces": 384,
+      "closed": true,
+      "signed_volume_world": 0.508574839276965,
+      "orientation": "undetermined"
+    }
+  ],
+  "regions": [],
+  "closed_topology_candidate": true,
+  "findings": [],
+  "coverage": {
+    "self_intersections": "not_tested",
+    "containment": "not_tested",
+    "assembly_gaps": "not_tested",
+    "symmetry": "not_inferred",
+    "cylindrical_fit": "not_tested",
+    "manufacturing": "not_certified"
+  },
+  "measured_bounds_local": [
+    [
+      -0.550000011920929,
+      0.550000011920929
+    ],
+    [
+      -0.550000011920929,
+      0.550000011920929
+    ],
+    [
+      -0.44999998807907104,
+      0.44999998807907104
+    ]
+  ],
+  "max_bounds_error": 1.1920928966180355e-08,
+  "intentional_voids": [
+    "Through bore diameter0.70; continuous inner wall"
+  ],
+  "attachment_points_checked": 1,
+  "visual_approval": "pending",
+  "reference_similarity": "not_scored"
+}

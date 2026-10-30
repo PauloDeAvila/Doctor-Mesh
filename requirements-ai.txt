@@ -1,0 +1,3 @@
+# Optional. Install in the same Python runtime as Blender, in an isolated target.
+# The SDK must expose responses.create and responses.input_tokens.count.
+openai==3.40.0

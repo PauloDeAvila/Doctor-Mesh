@@ -40,3 +40,12 @@
   - **Entrega C (Fases 10 a 12):** Addon completo no Blender, visualização de mapas de calor, inspeção multimodal e release v1.0.
 - **Justificativa:** Impede o overengineering prematuro. Não se constrói interface ou GPU kernels antes de provar matematicamente que os algoritmos de reconstrução convergem.
 - **Impacto:** Execução estritamente faseada com critérios claros de parada e validação.
+
+---
+
+### [DEC-005] Incorporação da Base de Código Existente (AI Mesh Doctor v0.2.0)
+- **Data:** 30/10/2026
+- **Contexto:** Existência de implementação prévia em `ChatGPT\blender\ai_mesh_doctor` contendo módulos de scanner, topologia, reparação de planos, transações com rollback e interface Blender.
+- **Decisão:** Importar a base de código integral para a raiz do repositório, auditar os módulos e atualizar o roadmap (`PLAN.md`), marcando as tarefas já atendidas para evitar retrabalho ou reinvenção da roda.
+- **Justificativa:** Obediência estrita aos princípios de engenharia de reaproveitamento do código existente, anti-overengineering e respeito ao trabalho já validado.
+- **Impacto:** Fases 1 (Ambiente/Setup), 4 (Scanner Topológico), 10 (Addon UI) e 11 (Captura e Supervisão) foram consideradas concluídas em seu baseline, permitindo foco imediato nas lacunas de reconstrução de cilindros deformados e automação do fitting.

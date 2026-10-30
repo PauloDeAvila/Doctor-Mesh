@@ -1,0 +1,6 @@
+{
+  "sdk_version": "3.40.0",
+  "count_endpoint_available": true,
+  "network_called": false,
+  "live_blender_import": true
+}

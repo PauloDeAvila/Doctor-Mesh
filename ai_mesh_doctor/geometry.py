@@ -1,0 +1,195 @@
+"""World-unit measurements on a disposable BMesh with a nearby local origin.
+
+Candidates are observations, never a claim that artistic intent is defective.
+Surface-intersection and manufacturing certification are outside this analyzer.
+"""
+import math
+import time
+from collections import Counter
+import bmesh
+from mathutils.kdtree import KDTree
+from .identity import mesh_fingerprint
+
+
+def stats(values):
+    values = list(values)
+    return {"min": min(values), "max": max(values), "mean": sum(values) / len(values)} if values else None
+
+
+def connected_components(vertices):
+    remaining = set(vertices)
+    islands = []
+    while remaining:
+        start = remaining.pop()
+        component, stack = [start], [start]
+        while stack:
+            vertex = stack.pop()
+            for edge in vertex.link_edges:
+                other = edge.other_vert(vertex)
+                if other in remaining:
+                    remaining.remove(other)
+                    stack.append(other)
+                    component.append(other)
+        islands.append(component)
+    return islands
+
+
+def boundary_regions(edges, cap):
+    remaining = set(edges)
+    regions = []
+    while remaining:
+        edge = min(remaining, key=lambda item: item.index)
+        remaining.remove(edge)
+        group, stack = [edge], [edge]
+        while stack:
+            for vertex in stack.pop().verts:
+                for adjacent in vertex.link_edges:
+                    if adjacent in remaining:
+                        remaining.remove(adjacent)
+                        group.append(adjacent)
+                        stack.append(adjacent)
+        degree = Counter(v for e in group for v in e.verts)
+        regions.append({
+            "id": f"boundary-{len(regions)}", "edge_count": len(group),
+            "edge_indices": sorted(e.index for e in group)[:cap],
+            "indices_truncated": len(group) > cap,
+            "closed_loop": all(n == 2 for n in degree.values()),
+            "perimeter_world": sum(e.calc_length() for e in group),
+            "intent": "unknown", "automatic_fill_allowed": False,
+        })
+    return regions
+
+
+def analyze_mesh(mesh, matrix, config):
+    if len(mesh.vertices) > config.max_vertices:
+        return {"status": "skipped_limit", "vertices": len(mesh.vertices),
+                "reason": "Vertex limit exceeded; isolate a functional component or raise the explicit budget"}
+    started = time.monotonic()
+    if not all(math.isfinite(n) for row in matrix for n in row):
+        return {'status':'invalid_coordinates','reason':'Non-finite transform'}
+    local_coordinates = [tuple(float(n) for n in vertex.co) for vertex in mesh.vertices]
+    bm = bmesh.new()
+    try:
+        bm.from_mesh(mesh)
+        # Distances, areas, angles and topology are translation invariant.
+        # Adding a large world translation to float32 BMesh coordinates can
+        # collapse distinct sub-micron vertices and create FALSE degeneracies.
+        bm.transform(matrix.to_3x3().to_4x4())
+        bm.normal_update()
+        for sequence in (bm.verts, bm.edges, bm.faces):
+            sequence.ensure_lookup_table()
+            sequence.index_update()
+        if any(not all(math.isfinite(n) for n in v.co) for v in bm.verts):
+            return {"status": "invalid_coordinates", "reason": "Non-finite world coordinates"}
+        boundary = [e for e in bm.edges if e.is_boundary]
+        wire = [e for e in bm.edges if e.is_wire]
+        radial = [e for e in bm.edges if len(e.link_faces) > 2]
+        winding = [e for e in bm.edges if e.is_manifold and not e.is_contiguous]
+        degenerate = [f for f in bm.faces if f.calc_area() <= config.area_tolerance]
+        zero_edges = [e for e in bm.edges if e.calc_length() <= config.distance_tolerance]
+        loose_vertices = [v for v in bm.verts if not v.link_edges]
+        nonmanifold_vertices = [v for v in bm.verts if not v.is_manifold]
+        tree = KDTree(len(bm.verts))
+        for v in bm.verts:
+            tree.insert(v.co, v.index)
+        tree.balance()
+        duplicates = []
+        duplicate_cap = False
+        for v in bm.verts:
+            if time.monotonic() - started > config.max_seconds:
+                return {"status": "skipped_time_limit", "reason": "Per-mesh budget exceeded"}
+            # KDTree.find_range allocates a list. Hard vertex budget bounds worst case.
+            for _, index, distance in tree.find_range(v.co, config.distance_tolerance):
+                if index > v.index:
+                    duplicates.append({"vertices": [v.index, index], "distance_world": distance})
+                    if len(duplicates) >= config.max_duplicate_pairs:
+                        duplicate_cap = True
+                        break
+            if duplicate_cap:
+                break
+        islands = connected_components(bm.verts)
+        shells = []
+        for component in islands:
+            faces = {f for v in component for f in v.link_faces}
+            closed = bool(faces) and all(v.is_manifold for v in component) and all(e.is_manifold for v in component for e in v.link_edges)
+            # Evaluate the signed tetrahedra in a nearby LOCAL reference with
+            # Python doubles, then apply the affine determinant. World-space
+            # float32 cross products caused false negative volumes for small
+            # translated screws even when winding/connectivity were correct.
+            if closed:
+                origin = local_coordinates[component[0].index]
+                relative = {v.index: tuple(local_coordinates[v.index][i]-origin[i] for i in range(3)) for v in component}
+                def tetra(a,b,c):
+                    return (a[0]*(b[1]*c[2]-b[2]*c[1])+a[1]*(b[2]*c[0]-b[0]*c[2])+a[2]*(b[0]*c[1]-b[1]*c[0]))/6
+                volume = math.fsum(tetra(relative[f.verts[0].index],relative[f.verts[i].index],relative[f.verts[i+1].index])
+                                   for f in faces for i in range(1,len(f.verts)-1))*matrix.to_3x3().determinant()
+            else:
+                volume = None
+            shells.append({"vertices": len(component), "faces": len(faces), "closed": closed,
+                           "signed_volume_world": volume,
+                           "orientation": "negative_candidate" if volume is not None and volume < 0 else "undetermined"})
+        regions = boundary_regions(boundary, config.max_region_indices)
+        findings = []
+
+        def finding(kind, elements, severity="warning", confidence=1.0):
+            if elements:
+                findings.append({"type": kind, "severity": severity, "confidence": confidence,
+                                 "count": len(elements), "indices": [e.index for e in elements][:config.max_region_indices],
+                                 "indices_truncated": len(elements) > config.max_region_indices,
+                                 "safe_to_automate": False, "complexity": "requires_context",
+                                 "images": [], "interpretation": "measured_observation"})
+
+        finding("boundary_edges_intent_unknown", boundary)
+        finding("radial_nonmanifold_edges", radial, "error")
+        finding("nonmanifold_vertices", nonmanifold_vertices)
+        finding("inconsistent_winding", winding, "error")
+        finding("degenerate_faces", degenerate, "error")
+        finding("short_edges", zero_edges)
+        finding("loose_edges", wire)
+        finding("loose_vertices", loose_vertices)
+        if duplicates:
+            findings.append({"type": "near_duplicate_vertices", "severity": "warning", "confidence": 1.0,
+                             "count": len(duplicates), "count_is_lower_bound": duplicate_cap,
+                             "pairs": duplicates, "safe_to_automate": False, "images": [],
+                             "complexity": "requires_context", "interpretation": "proximity_not_intent"})
+        if any(s["orientation"] == "negative_candidate" for s in shells):
+            findings.append({"type": "negative_shell_volume", "severity": "warning", "confidence": 0.7,
+                             "safe_to_automate": False, "images": [], "complexity": "requires_context",
+                             "interpretation": "May be an intentional inner cavity shell or mirrored transform"})
+        planarity, stretch, curvature = [], [], []
+        for face in bm.faces:
+            if len(face.verts) > 3:
+                center = face.calc_center_median()
+                planarity.append(max(abs((v.co-center).dot(face.normal)) for v in face.verts))
+            lengths = [e.calc_length() for e in face.edges]
+            if lengths and min(lengths) > config.distance_tolerance:
+                stretch.append(max(lengths) / min(lengths))
+        for edge in bm.edges:
+            if edge.is_manifold:
+                curvature.append(abs(edge.calc_face_angle(0)))
+        complete_closed = bool(bm.faces) and not (boundary or wire or radial or nonmanifold_vertices or degenerate or winding)
+        return {
+            "status": "complete", "fingerprint": mesh_fingerprint(mesh),
+            "analysis_matrix": [list(row) for row in matrix],
+            "measurement_origin": "translation omitted; linear transform applied in world units",
+            "vertices": len(bm.verts), "edges": len(bm.edges), "faces": len(bm.faces),
+            "polygon_distribution": dict(Counter(str(len(f.verts)) for f in bm.faces)),
+            "edge_length_world": stats(e.calc_length() for e in bm.edges),
+            "face_area_world": stats(f.calc_area() for f in bm.faces),
+            "planarity_deviation_world": stats(planarity), "edge_ratio": stats(stretch),
+            "dihedral_angle_radians": stats(curvature),
+            "sharp_edges": sum(not e.smooth for e in bm.edges),
+            "normal_summary": {"space": "world", "face_length": stats(f.normal.length for f in bm.faces)},
+            "boundary_edge_count": len(boundary), "radial_edge_count": len(radial),
+            "nonmanifold_vertex_count": len(nonmanifold_vertices),
+            "degenerate_face_count": len(degenerate), "winding_edge_count": len(winding),
+            "loose_edge_count": len(wire), "loose_vertex_count": len(loose_vertices),
+            "duplicate_pair_count": len(duplicates), "duplicate_count_is_lower_bound": duplicate_cap,
+            "island_count": len(islands), "shells": shells, "regions": regions,
+            "closed_topology_candidate": complete_closed, "findings": findings,
+            "coverage": {"self_intersections": "not_tested", "containment": "not_tested",
+                         "assembly_gaps": "not_tested", "symmetry": "not_inferred",
+                         "cylindrical_fit": "not_tested", "manufacturing": "not_certified"},
+        }
+    finally:
+        bm.free()

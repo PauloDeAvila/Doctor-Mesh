@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "sdk_version": "3.40.0",
+  "python": "3.13.13 (main, Sep 28 2026, 06:58:05) [MSC v.1944 64 bit (AMD64)]",
+  "http_transport": "local MockTransport",
+  "real_network": false,
+  "requests": [
+    "/v1/responses/input_tokens",
+    "/v1/responses"
+  ]
+}

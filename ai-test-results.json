@@ -1,0 +1,8 @@
+{
+  "tests": 10,
+  "success": true,
+  "live_api_tested": false,
+  "transport": "injected fake Responses SDK",
+  "failures": 0,
+  "errors": 0
+}

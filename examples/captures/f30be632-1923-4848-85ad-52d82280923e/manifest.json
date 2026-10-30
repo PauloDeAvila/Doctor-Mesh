@@ -1,0 +1,2875 @@
+{
+  "schema_version": "1.0.0",
+  "owner": "f30be632-1923-4848-85ad-52d82280923e",
+  "target": "Cube",
+  "created_at": "2026-10-28T23:57:19.740530+00:00",
+  "status": "complete",
+  "reviewed": false,
+  "approval": "pending",
+  "files": [
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_axis_pos_x.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:axis_pos_x",
+      "projection": "ORTHO",
+      "camera_position": [
+        8.906177520751953,
+        0.0,
+        0.0
+      ],
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.5172930000117049
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_axis_neg_x.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:axis_neg_x",
+      "projection": "ORTHO",
+      "camera_position": [
+        -8.906177520751953,
+        0.0,
+        0.0
+      ],
+      "direction": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012201500008814037
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_axis_pos_y.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:axis_pos_y",
+      "projection": "ORTHO",
+      "camera_position": [
+        0.0,
+        8.906177520751953,
+        0.0
+      ],
+      "direction": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011918800009880215
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_axis_neg_y.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:axis_neg_y",
+      "projection": "ORTHO",
+      "camera_position": [
+        0.0,
+        -8.906177520751953,
+        0.0
+      ],
+      "direction": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010316999978385866
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_top.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:top",
+      "projection": "ORTHO",
+      "camera_position": [
+        0.0,
+        0.0,
+        8.906177520751953
+      ],
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010785199992824346
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_bottom.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:bottom",
+      "projection": "ORTHO",
+      "camera_position": [
+        0.0,
+        0.0,
+        -8.906177520751953
+      ],
+      "direction": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010094999975990504
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_000.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_000",
+      "projection": "PERSP",
+      "camera_position": [
+        8.906177520751953,
+        0.0,
+        0.0
+      ],
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.01062309998087585
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_015.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_015",
+      "projection": "PERSP",
+      "camera_position": [
+        8.602706909179688,
+        2.3050882816314697,
+        0.0
+      ],
+      "direction": [
+        0.9659258127212524,
+        0.258819043636322,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.01024540001526475
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_030.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_030",
+      "projection": "PERSP",
+      "camera_position": [
+        7.712975978851318,
+        4.453088760375977,
+        0.0
+      ],
+      "direction": [
+        0.8660253882408142,
+        0.5,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009966099984012544
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_045.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_045",
+      "projection": "PERSP",
+      "camera_position": [
+        6.297618389129639,
+        6.297618389129639,
+        0.0
+      ],
+      "direction": [
+        0.7071067690849304,
+        0.7071067690849304,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011035299976356328
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_060.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_060",
+      "projection": "PERSP",
+      "camera_position": [
+        4.453088760375977,
+        7.712975978851318,
+        0.0
+      ],
+      "direction": [
+        0.5,
+        0.8660253882408142,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011305699998047203
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_075.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_075",
+      "projection": "PERSP",
+      "camera_position": [
+        2.3050882816314697,
+        8.602706909179688,
+        0.0
+      ],
+      "direction": [
+        0.258819043636322,
+        0.9659258127212524,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011604100000113249
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_090.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_090",
+      "projection": "PERSP",
+      "camera_position": [
+        5.453461224032426e-16,
+        8.906177520751953,
+        0.0
+      ],
+      "direction": [
+        6.123234262925839e-17,
+        1.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011068099993281066
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_105.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_105",
+      "projection": "PERSP",
+      "camera_position": [
+        -2.3050882816314697,
+        8.602706909179688,
+        0.0
+      ],
+      "direction": [
+        -0.258819043636322,
+        0.9659258127212524,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009558599966112524
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_120.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_120",
+      "projection": "PERSP",
+      "camera_position": [
+        -4.453088760375977,
+        7.712975978851318,
+        0.0
+      ],
+      "direction": [
+        -0.5,
+        0.8660253882408142,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009679799957666546
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_135.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_135",
+      "projection": "PERSP",
+      "camera_position": [
+        -6.297618389129639,
+        6.297618389129639,
+        0.0
+      ],
+      "direction": [
+        -0.7071067690849304,
+        0.7071067690849304,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009888700034935027
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_150.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_150",
+      "projection": "PERSP",
+      "camera_position": [
+        -7.712975978851318,
+        4.453088760375977,
+        0.0
+      ],
+      "direction": [
+        -0.8660253882408142,
+        0.5,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009980899980291724
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_165.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_165",
+      "projection": "PERSP",
+      "camera_position": [
+        -8.602706909179688,
+        2.3050882816314697,
+        0.0
+      ],
+      "direction": [
+        -0.9659258127212524,
+        0.258819043636322,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009549500013235956
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_180.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_180",
+      "projection": "PERSP",
+      "camera_position": [
+        -8.906177520751953,
+        1.0906922448064853e-15,
+        0.0
+      ],
+      "direction": [
+        -1.0,
+        1.2246468525851679e-16,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009587999957147986
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_195.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_195",
+      "projection": "PERSP",
+      "camera_position": [
+        -8.602706909179688,
+        -2.3050882816314697,
+        0.0
+      ],
+      "direction": [
+        -0.9659258127212524,
+        -0.258819043636322,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010179099976085126
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_210.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_210",
+      "projection": "PERSP",
+      "camera_position": [
+        -7.712975978851318,
+        -4.453088760375977,
+        0.0
+      ],
+      "direction": [
+        -0.8660253882408142,
+        -0.5,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.0110941999591887
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_225.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_225",
+      "projection": "PERSP",
+      "camera_position": [
+        -6.297618389129639,
+        -6.297618389129639,
+        0.0
+      ],
+      "direction": [
+        -0.7071067690849304,
+        -0.7071067690849304,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010549300001002848
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_240.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_240",
+      "projection": "PERSP",
+      "camera_position": [
+        -4.453088760375977,
+        -7.712975978851318,
+        0.0
+      ],
+      "direction": [
+        -0.5,
+        -0.8660253882408142,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010578199988231063
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_255.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_255",
+      "projection": "PERSP",
+      "camera_position": [
+        -2.3050882816314697,
+        -8.602706909179688,
+        0.0
+      ],
+      "direction": [
+        -0.258819043636322,
+        -0.9659258127212524,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010505400015972555
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_270.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_270",
+      "projection": "PERSP",
+      "camera_position": [
+        -1.6360382083910503e-15,
+        -8.906177520751953,
+        0.0
+      ],
+      "direction": [
+        -1.8369701465288538e-16,
+        -1.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.00930460001109168
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_285.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_285",
+      "projection": "PERSP",
+      "camera_position": [
+        2.3050882816314697,
+        -8.602706909179688,
+        0.0
+      ],
+      "direction": [
+        0.258819043636322,
+        -0.9659258127212524,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.013714800006709993
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_300.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_300",
+      "projection": "PERSP",
+      "camera_position": [
+        4.453088760375977,
+        -7.712975978851318,
+        0.0
+      ],
+      "direction": [
+        0.5,
+        -0.8660253882408142,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012139200000092387
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_315.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_315",
+      "projection": "PERSP",
+      "camera_position": [
+        6.297618389129639,
+        -6.297618389129639,
+        0.0
+      ],
+      "direction": [
+        0.7071067690849304,
+        -0.7071067690849304,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.01168390002567321
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_330.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_330",
+      "projection": "PERSP",
+      "camera_position": [
+        7.712975978851318,
+        -4.453088760375977,
+        0.0
+      ],
+      "direction": [
+        0.8660253882408142,
+        -0.5,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010191000008489937
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_horizontal_345.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:horizontal_345",
+      "projection": "PERSP",
+      "camera_position": [
+        8.602706909179688,
+        -2.3050882816314697,
+        0.0
+      ],
+      "direction": [
+        0.9659258127212524,
+        -0.258819043636322,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010906899988185614
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_000.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_000",
+      "projection": "PERSP",
+      "camera_position": [
+        8.906177520751953,
+        0.0,
+        0.0
+      ],
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009957100031897426
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_015.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_015",
+      "projection": "PERSP",
+      "camera_position": [
+        8.602706909179688,
+        0.0,
+        2.3050882816314697
+      ],
+      "direction": [
+        0.9659258127212524,
+        0.0,
+        0.258819043636322
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010101300023961812
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_030.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_030",
+      "projection": "PERSP",
+      "camera_position": [
+        7.712975978851318,
+        0.0,
+        4.453088760375977
+      ],
+      "direction": [
+        0.8660253882408142,
+        0.0,
+        0.5
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009240299987141043
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_045.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_045",
+      "projection": "PERSP",
+      "camera_position": [
+        6.297618389129639,
+        0.0,
+        6.297618389129639
+      ],
+      "direction": [
+        0.7071067690849304,
+        0.0,
+        0.7071067690849304
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.0094941999996081
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_060.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_060",
+      "projection": "PERSP",
+      "camera_position": [
+        4.453088760375977,
+        0.0,
+        7.712975978851318
+      ],
+      "direction": [
+        0.5,
+        0.0,
+        0.8660253882408142
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011106599995400757
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_075.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_075",
+      "projection": "PERSP",
+      "camera_position": [
+        2.3050882816314697,
+        0.0,
+        8.602706909179688
+      ],
+      "direction": [
+        0.258819043636322,
+        0.0,
+        0.9659258127212524
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009590999979991466
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_090.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_090",
+      "projection": "PERSP",
+      "camera_position": [
+        5.453461224032426e-16,
+        0.0,
+        8.906177520751953
+      ],
+      "direction": [
+        6.123234262925839e-17,
+        0.0,
+        1.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010946599999442697
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_105.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_105",
+      "projection": "PERSP",
+      "camera_position": [
+        -2.3050882816314697,
+        0.0,
+        8.602706909179688
+      ],
+      "direction": [
+        -0.258819043636322,
+        0.0,
+        0.9659258127212524
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012108099996112287
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_120.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_120",
+      "projection": "PERSP",
+      "camera_position": [
+        -4.453088760375977,
+        0.0,
+        7.712975978851318
+      ],
+      "direction": [
+        -0.5,
+        0.0,
+        0.8660253882408142
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012369200005196035
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_135.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_135",
+      "projection": "PERSP",
+      "camera_position": [
+        -6.297618389129639,
+        0.0,
+        6.297618389129639
+      ],
+      "direction": [
+        -0.7071067690849304,
+        0.0,
+        0.7071067690849304
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.015231300028972328
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_150.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_150",
+      "projection": "PERSP",
+      "camera_position": [
+        -7.712975978851318,
+        0.0,
+        4.453088760375977
+      ],
+      "direction": [
+        -0.8660253882408142,
+        0.0,
+        0.5
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011412100051529706
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_165.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_165",
+      "projection": "PERSP",
+      "camera_position": [
+        -8.602706909179688,
+        0.0,
+        2.3050882816314697
+      ],
+      "direction": [
+        -0.9659258127212524,
+        0.0,
+        0.258819043636322
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012960600026417524
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_180.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_180",
+      "projection": "PERSP",
+      "camera_position": [
+        -8.906177520751953,
+        0.0,
+        1.0906922448064853e-15
+      ],
+      "direction": [
+        -1.0,
+        0.0,
+        1.2246468525851679e-16
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012086300004739314
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_195.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_195",
+      "projection": "PERSP",
+      "camera_position": [
+        -8.602706909179688,
+        0.0,
+        -2.3050882816314697
+      ],
+      "direction": [
+        -0.9659258127212524,
+        0.0,
+        -0.258819043636322
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011409199971240014
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_210.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_210",
+      "projection": "PERSP",
+      "camera_position": [
+        -7.712975978851318,
+        0.0,
+        -4.453088760375977
+      ],
+      "direction": [
+        -0.8660253882408142,
+        0.0,
+        -0.5
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010944399982690811
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_225.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_225",
+      "projection": "PERSP",
+      "camera_position": [
+        -6.297618389129639,
+        0.0,
+        -6.297618389129639
+      ],
+      "direction": [
+        -0.7071067690849304,
+        0.0,
+        -0.7071067690849304
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.01313139998819679
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_240.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_240",
+      "projection": "PERSP",
+      "camera_position": [
+        -4.453088760375977,
+        0.0,
+        -7.712975978851318
+      ],
+      "direction": [
+        -0.5,
+        0.0,
+        -0.8660253882408142
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010570899990852922
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_255.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_255",
+      "projection": "PERSP",
+      "camera_position": [
+        -2.3050882816314697,
+        0.0,
+        -8.602706909179688
+      ],
+      "direction": [
+        -0.258819043636322,
+        0.0,
+        -0.9659258127212524
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012521700002253056
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_270.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_270",
+      "projection": "PERSP",
+      "camera_position": [
+        -1.6360382083910503e-15,
+        0.0,
+        -8.906177520751953
+      ],
+      "direction": [
+        -1.8369701465288538e-16,
+        0.0,
+        -1.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011419699992984533
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_285.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_285",
+      "projection": "PERSP",
+      "camera_position": [
+        2.3050882816314697,
+        0.0,
+        -8.602706909179688
+      ],
+      "direction": [
+        0.258819043636322,
+        0.0,
+        -0.9659258127212524
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011216700018849224
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_300.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_300",
+      "projection": "PERSP",
+      "camera_position": [
+        4.453088760375977,
+        0.0,
+        -7.712975978851318
+      ],
+      "direction": [
+        0.5,
+        0.0,
+        -0.8660253882408142
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010465600003954023
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_315.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_315",
+      "projection": "PERSP",
+      "camera_position": [
+        6.297618389129639,
+        0.0,
+        -6.297618389129639
+      ],
+      "direction": [
+        0.7071067690849304,
+        0.0,
+        -0.7071067690849304
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.00978289998602122
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_330.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_330",
+      "projection": "PERSP",
+      "camera_position": [
+        7.712975978851318,
+        0.0,
+        -4.453088760375977
+      ],
+      "direction": [
+        0.8660253882408142,
+        0.0,
+        -0.5
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012397299986332655
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_vertical_345.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:vertical_345",
+      "projection": "PERSP",
+      "camera_position": [
+        8.602706909179688,
+        0.0,
+        -2.3050882816314697
+      ],
+      "direction": [
+        0.9659258127212524,
+        0.0,
+        -0.258819043636322
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011133500025607646
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_diagonal_-1_-1_-1.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:diagonal_-1_-1_-1",
+      "projection": "PERSP",
+      "camera_position": [
+        -5.141983985900879,
+        -5.141983985900879,
+        -5.141983985900879
+      ],
+      "direction": [
+        -0.5773502588272095,
+        -0.5773502588272095,
+        -0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011500700027681887
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_diagonal_-1_-1_1.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:diagonal_-1_-1_1",
+      "projection": "PERSP",
+      "camera_position": [
+        -5.141983985900879,
+        -5.141983985900879,
+        5.141983985900879
+      ],
+      "direction": [
+        -0.5773502588272095,
+        -0.5773502588272095,
+        0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.013628699991386384
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_diagonal_-1_1_-1.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:diagonal_-1_1_-1",
+      "projection": "PERSP",
+      "camera_position": [
+        -5.141983985900879,
+        5.141983985900879,
+        -5.141983985900879
+      ],
+      "direction": [
+        -0.5773502588272095,
+        0.5773502588272095,
+        -0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012079400010406971
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_diagonal_-1_1_1.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:diagonal_-1_1_1",
+      "projection": "PERSP",
+      "camera_position": [
+        -5.141983985900879,
+        5.141983985900879,
+        5.141983985900879
+      ],
+      "direction": [
+        -0.5773502588272095,
+        0.5773502588272095,
+        0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.01205269998172298
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_diagonal_1_-1_-1.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:diagonal_1_-1_-1",
+      "projection": "PERSP",
+      "camera_position": [
+        5.141983985900879,
+        -5.141983985900879,
+        -5.141983985900879
+      ],
+      "direction": [
+        0.5773502588272095,
+        -0.5773502588272095,
+        -0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.01225430000340566
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_diagonal_1_-1_1.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:diagonal_1_-1_1",
+      "projection": "PERSP",
+      "camera_position": [
+        5.141983985900879,
+        -5.141983985900879,
+        5.141983985900879
+      ],
+      "direction": [
+        0.5773502588272095,
+        -0.5773502588272095,
+        0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011037599993869662
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_diagonal_1_1_-1.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:diagonal_1_1_-1",
+      "projection": "PERSP",
+      "camera_position": [
+        5.141983985900879,
+        5.141983985900879,
+        -5.141983985900879
+      ],
+      "direction": [
+        0.5773502588272095,
+        0.5773502588272095,
+        -0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.01041430002078414
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\isolated_diagonal_1_1_1.png",
+      "classification": "temporary_inspection",
+      "purpose": "isolated:diagonal_1_1_1",
+      "projection": "PERSP",
+      "camera_position": [
+        5.141983985900879,
+        5.141983985900879,
+        5.141983985900879
+      ],
+      "direction": [
+        0.5773502588272095,
+        0.5773502588272095,
+        0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.013264000008348376
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_axis_pos_x.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:axis_pos_x",
+      "projection": "ORTHO",
+      "camera_position": [
+        8.906177520751953,
+        0.0,
+        0.0
+      ],
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.01021120004588738
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_axis_neg_x.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:axis_neg_x",
+      "projection": "ORTHO",
+      "camera_position": [
+        -8.906177520751953,
+        0.0,
+        0.0
+      ],
+      "direction": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010482900019269437
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_axis_pos_y.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:axis_pos_y",
+      "projection": "ORTHO",
+      "camera_position": [
+        0.0,
+        8.906177520751953,
+        0.0
+      ],
+      "direction": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011040400015190244
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_axis_neg_y.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:axis_neg_y",
+      "projection": "ORTHO",
+      "camera_position": [
+        0.0,
+        -8.906177520751953,
+        0.0
+      ],
+      "direction": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.00962600001366809
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_top.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:top",
+      "projection": "ORTHO",
+      "camera_position": [
+        0.0,
+        0.0,
+        8.906177520751953
+      ],
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010272499988786876
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_bottom.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:bottom",
+      "projection": "ORTHO",
+      "camera_position": [
+        0.0,
+        0.0,
+        -8.906177520751953
+      ],
+      "direction": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.013028799963649362
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_000.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_000",
+      "projection": "PERSP",
+      "camera_position": [
+        8.906177520751953,
+        0.0,
+        0.0
+      ],
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010139400023035705
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_015.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_015",
+      "projection": "PERSP",
+      "camera_position": [
+        8.602706909179688,
+        2.3050882816314697,
+        0.0
+      ],
+      "direction": [
+        0.9659258127212524,
+        0.258819043636322,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011128700047265738
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_030.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_030",
+      "projection": "PERSP",
+      "camera_position": [
+        7.712975978851318,
+        4.453088760375977,
+        0.0
+      ],
+      "direction": [
+        0.8660253882408142,
+        0.5,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010143000050447881
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_045.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_045",
+      "projection": "PERSP",
+      "camera_position": [
+        6.297618389129639,
+        6.297618389129639,
+        0.0
+      ],
+      "direction": [
+        0.7071067690849304,
+        0.7071067690849304,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.00947480002650991
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_060.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_060",
+      "projection": "PERSP",
+      "camera_position": [
+        4.453088760375977,
+        7.712975978851318,
+        0.0
+      ],
+      "direction": [
+        0.5,
+        0.8660253882408142,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.008616300008725375
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_075.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_075",
+      "projection": "PERSP",
+      "camera_position": [
+        2.3050882816314697,
+        8.602706909179688,
+        0.0
+      ],
+      "direction": [
+        0.258819043636322,
+        0.9659258127212524,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.008911300043109804
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_090.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_090",
+      "projection": "PERSP",
+      "camera_position": [
+        5.453461224032426e-16,
+        8.906177520751953,
+        0.0
+      ],
+      "direction": [
+        6.123234262925839e-17,
+        1.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.0103017000365071
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_105.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_105",
+      "projection": "PERSP",
+      "camera_position": [
+        -2.3050882816314697,
+        8.602706909179688,
+        0.0
+      ],
+      "direction": [
+        -0.258819043636322,
+        0.9659258127212524,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.00909559999126941
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_120.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_120",
+      "projection": "PERSP",
+      "camera_position": [
+        -4.453088760375977,
+        7.712975978851318,
+        0.0
+      ],
+      "direction": [
+        -0.5,
+        0.8660253882408142,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009531899995636195
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_135.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_135",
+      "projection": "PERSP",
+      "camera_position": [
+        -6.297618389129639,
+        6.297618389129639,
+        0.0
+      ],
+      "direction": [
+        -0.7071067690849304,
+        0.7071067690849304,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009605500032193959
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_150.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_150",
+      "projection": "PERSP",
+      "camera_position": [
+        -7.712975978851318,
+        4.453088760375977,
+        0.0
+      ],
+      "direction": [
+        -0.8660253882408142,
+        0.5,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009962999960407615
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_165.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_165",
+      "projection": "PERSP",
+      "camera_position": [
+        -8.602706909179688,
+        2.3050882816314697,
+        0.0
+      ],
+      "direction": [
+        -0.9659258127212524,
+        0.258819043636322,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.0094260000041686
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_180.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_180",
+      "projection": "PERSP",
+      "camera_position": [
+        -8.906177520751953,
+        1.0906922448064853e-15,
+        0.0
+      ],
+      "direction": [
+        -1.0,
+        1.2246468525851679e-16,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010437800025101751
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_195.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_195",
+      "projection": "PERSP",
+      "camera_position": [
+        -8.602706909179688,
+        -2.3050882816314697,
+        0.0
+      ],
+      "direction": [
+        -0.9659258127212524,
+        -0.258819043636322,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009934499976225197
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_210.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_210",
+      "projection": "PERSP",
+      "camera_position": [
+        -7.712975978851318,
+        -4.453088760375977,
+        0.0
+      ],
+      "direction": [
+        -0.8660253882408142,
+        -0.5,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009177699976135045
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_225.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_225",
+      "projection": "PERSP",
+      "camera_position": [
+        -6.297618389129639,
+        -6.297618389129639,
+        0.0
+      ],
+      "direction": [
+        -0.7071067690849304,
+        -0.7071067690849304,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.00876370002515614
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_240.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_240",
+      "projection": "PERSP",
+      "camera_position": [
+        -4.453088760375977,
+        -7.712975978851318,
+        0.0
+      ],
+      "direction": [
+        -0.5,
+        -0.8660253882408142,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009817600017413497
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_255.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_255",
+      "projection": "PERSP",
+      "camera_position": [
+        -2.3050882816314697,
+        -8.602706909179688,
+        0.0
+      ],
+      "direction": [
+        -0.258819043636322,
+        -0.9659258127212524,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010430699971038848
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_270.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_270",
+      "projection": "PERSP",
+      "camera_position": [
+        -1.6360382083910503e-15,
+        -8.906177520751953,
+        0.0
+      ],
+      "direction": [
+        -1.8369701465288538e-16,
+        -1.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009579400008078665
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_285.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_285",
+      "projection": "PERSP",
+      "camera_position": [
+        2.3050882816314697,
+        -8.602706909179688,
+        0.0
+      ],
+      "direction": [
+        0.258819043636322,
+        -0.9659258127212524,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.0100158000132069
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_300.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_300",
+      "projection": "PERSP",
+      "camera_position": [
+        4.453088760375977,
+        -7.712975978851318,
+        0.0
+      ],
+      "direction": [
+        0.5,
+        -0.8660253882408142,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.008918000035919249
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_315.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_315",
+      "projection": "PERSP",
+      "camera_position": [
+        6.297618389129639,
+        -6.297618389129639,
+        0.0
+      ],
+      "direction": [
+        0.7071067690849304,
+        -0.7071067690849304,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009225699992384762
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_330.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_330",
+      "projection": "PERSP",
+      "camera_position": [
+        7.712975978851318,
+        -4.453088760375977,
+        0.0
+      ],
+      "direction": [
+        0.8660253882408142,
+        -0.5,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.009757400024682283
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_horizontal_345.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:horizontal_345",
+      "projection": "PERSP",
+      "camera_position": [
+        8.602706909179688,
+        -2.3050882816314697,
+        0.0
+      ],
+      "direction": [
+        0.9659258127212524,
+        -0.258819043636322,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010149299982003868
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_000.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_000",
+      "projection": "PERSP",
+      "camera_position": [
+        8.906177520751953,
+        0.0,
+        0.0
+      ],
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.013540600019041449
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_015.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_015",
+      "projection": "PERSP",
+      "camera_position": [
+        8.602706909179688,
+        0.0,
+        2.3050882816314697
+      ],
+      "direction": [
+        0.9659258127212524,
+        0.0,
+        0.258819043636322
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.01023200002964586
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_030.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_030",
+      "projection": "PERSP",
+      "camera_position": [
+        7.712975978851318,
+        0.0,
+        4.453088760375977
+      ],
+      "direction": [
+        0.8660253882408142,
+        0.0,
+        0.5
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.008875100000295788
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_045.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_045",
+      "projection": "PERSP",
+      "camera_position": [
+        6.297618389129639,
+        0.0,
+        6.297618389129639
+      ],
+      "direction": [
+        0.7071067690849304,
+        0.0,
+        0.7071067690849304
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.008764799975324422
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_060.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_060",
+      "projection": "PERSP",
+      "camera_position": [
+        4.453088760375977,
+        0.0,
+        7.712975978851318
+      ],
+      "direction": [
+        0.5,
+        0.0,
+        0.8660253882408142
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010576200031209737
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_075.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_075",
+      "projection": "PERSP",
+      "camera_position": [
+        2.3050882816314697,
+        0.0,
+        8.602706909179688
+      ],
+      "direction": [
+        0.258819043636322,
+        0.0,
+        0.9659258127212524
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.013268799986690283
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_090.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_090",
+      "projection": "PERSP",
+      "camera_position": [
+        5.453461224032426e-16,
+        0.0,
+        8.906177520751953
+      ],
+      "direction": [
+        6.123234262925839e-17,
+        0.0,
+        1.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.010806100035551935
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_105.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_105",
+      "projection": "PERSP",
+      "camera_position": [
+        -2.3050882816314697,
+        0.0,
+        8.602706909179688
+      ],
+      "direction": [
+        -0.258819043636322,
+        0.0,
+        0.9659258127212524
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012638800020795316
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_120.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_120",
+      "projection": "PERSP",
+      "camera_position": [
+        -4.453088760375977,
+        0.0,
+        7.712975978851318
+      ],
+      "direction": [
+        -0.5,
+        0.0,
+        0.8660253882408142
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.01328850002028048
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_135.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_135",
+      "projection": "PERSP",
+      "camera_position": [
+        -6.297618389129639,
+        0.0,
+        6.297618389129639
+      ],
+      "direction": [
+        -0.7071067690849304,
+        0.0,
+        0.7071067690849304
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.016255099966656417
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_150.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_150",
+      "projection": "PERSP",
+      "camera_position": [
+        -7.712975978851318,
+        0.0,
+        4.453088760375977
+      ],
+      "direction": [
+        -0.8660253882408142,
+        0.0,
+        0.5
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012516299961134791
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_165.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_165",
+      "projection": "PERSP",
+      "camera_position": [
+        -8.602706909179688,
+        0.0,
+        2.3050882816314697
+      ],
+      "direction": [
+        -0.9659258127212524,
+        0.0,
+        0.258819043636322
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012806600017938763
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_180.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_180",
+      "projection": "PERSP",
+      "camera_position": [
+        -8.906177520751953,
+        0.0,
+        1.0906922448064853e-15
+      ],
+      "direction": [
+        -1.0,
+        0.0,
+        1.2246468525851679e-16
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012920400011353195
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_195.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_195",
+      "projection": "PERSP",
+      "camera_position": [
+        -8.602706909179688,
+        0.0,
+        -2.3050882816314697
+      ],
+      "direction": [
+        -0.9659258127212524,
+        0.0,
+        -0.258819043636322
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.014315999986138195
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_210.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_210",
+      "projection": "PERSP",
+      "camera_position": [
+        -7.712975978851318,
+        0.0,
+        -4.453088760375977
+      ],
+      "direction": [
+        -0.8660253882408142,
+        0.0,
+        -0.5
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.013325799955055118
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_225.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_225",
+      "projection": "PERSP",
+      "camera_position": [
+        -6.297618389129639,
+        0.0,
+        -6.297618389129639
+      ],
+      "direction": [
+        -0.7071067690849304,
+        0.0,
+        -0.7071067690849304
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.013480100024025887
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_240.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_240",
+      "projection": "PERSP",
+      "camera_position": [
+        -4.453088760375977,
+        0.0,
+        -7.712975978851318
+      ],
+      "direction": [
+        -0.5,
+        0.0,
+        -0.8660253882408142
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.013398400042206049
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_255.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_255",
+      "projection": "PERSP",
+      "camera_position": [
+        -2.3050882816314697,
+        0.0,
+        -8.602706909179688
+      ],
+      "direction": [
+        -0.258819043636322,
+        0.0,
+        -0.9659258127212524
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011983699980191886
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_270.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_270",
+      "projection": "PERSP",
+      "camera_position": [
+        -1.6360382083910503e-15,
+        0.0,
+        -8.906177520751953
+      ],
+      "direction": [
+        -1.8369701465288538e-16,
+        0.0,
+        -1.0
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012318699969910085
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_285.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_285",
+      "projection": "PERSP",
+      "camera_position": [
+        2.3050882816314697,
+        0.0,
+        -8.602706909179688
+      ],
+      "direction": [
+        0.258819043636322,
+        0.0,
+        -0.9659258127212524
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.013574000040534884
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_300.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_300",
+      "projection": "PERSP",
+      "camera_position": [
+        4.453088760375977,
+        0.0,
+        -7.712975978851318
+      ],
+      "direction": [
+        0.5,
+        0.0,
+        -0.8660253882408142
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012839399976655841
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_315.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_315",
+      "projection": "PERSP",
+      "camera_position": [
+        6.297618389129639,
+        0.0,
+        -6.297618389129639
+      ],
+      "direction": [
+        0.7071067690849304,
+        0.0,
+        -0.7071067690849304
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011504399997647852
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_330.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_330",
+      "projection": "PERSP",
+      "camera_position": [
+        7.712975978851318,
+        0.0,
+        -4.453088760375977
+      ],
+      "direction": [
+        0.8660253882408142,
+        0.0,
+        -0.5
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012719699996523559
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_vertical_345.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:vertical_345",
+      "projection": "PERSP",
+      "camera_position": [
+        8.602706909179688,
+        0.0,
+        -2.3050882816314697
+      ],
+      "direction": [
+        0.9659258127212524,
+        0.0,
+        -0.258819043636322
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011786699993535876
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_diagonal_-1_-1_-1.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:diagonal_-1_-1_-1",
+      "projection": "PERSP",
+      "camera_position": [
+        -5.141983985900879,
+        -5.141983985900879,
+        -5.141983985900879
+      ],
+      "direction": [
+        -0.5773502588272095,
+        -0.5773502588272095,
+        -0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011403699987567961
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_diagonal_-1_-1_1.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:diagonal_-1_-1_1",
+      "projection": "PERSP",
+      "camera_position": [
+        -5.141983985900879,
+        -5.141983985900879,
+        5.141983985900879
+      ],
+      "direction": [
+        -0.5773502588272095,
+        -0.5773502588272095,
+        0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.01086599996779114
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_diagonal_-1_1_-1.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:diagonal_-1_1_-1",
+      "projection": "PERSP",
+      "camera_position": [
+        -5.141983985900879,
+        5.141983985900879,
+        -5.141983985900879
+      ],
+      "direction": [
+        -0.5773502588272095,
+        0.5773502588272095,
+        -0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011256400030106306
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_diagonal_-1_1_1.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:diagonal_-1_1_1",
+      "projection": "PERSP",
+      "camera_position": [
+        -5.141983985900879,
+        5.141983985900879,
+        5.141983985900879
+      ],
+      "direction": [
+        -0.5773502588272095,
+        0.5773502588272095,
+        0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.01202919997740537
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_diagonal_1_-1_-1.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:diagonal_1_-1_-1",
+      "projection": "PERSP",
+      "camera_position": [
+        5.141983985900879,
+        -5.141983985900879,
+        -5.141983985900879
+      ],
+      "direction": [
+        0.5773502588272095,
+        -0.5773502588272095,
+        -0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.011070800013840199
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_diagonal_1_-1_1.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:diagonal_1_-1_1",
+      "projection": "PERSP",
+      "camera_position": [
+        5.141983985900879,
+        -5.141983985900879,
+        5.141983985900879
+      ],
+      "direction": [
+        0.5773502588272095,
+        -0.5773502588272095,
+        0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012617100030183792
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_diagonal_1_1_-1.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:diagonal_1_1_-1",
+      "projection": "PERSP",
+      "camera_position": [
+        5.141983985900879,
+        5.141983985900879,
+        -5.141983985900879
+      ],
+      "direction": [
+        0.5773502588272095,
+        0.5773502588272095,
+        -0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.013251800031866878
+    },
+    {
+      "path": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\examples\\captures\\f30be632-1923-4848-85ad-52d82280923e\\assembled_diagonal_1_1_1.png",
+      "classification": "temporary_inspection",
+      "purpose": "assembled:diagonal_1_1_1",
+      "projection": "PERSP",
+      "camera_position": [
+        5.141983985900879,
+        5.141983985900879,
+        5.141983985900879
+      ],
+      "direction": [
+        0.5773502588272095,
+        0.5773502588272095,
+        0.5773502588272095
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 1.7320508075688772,
+      "render_seconds": 0.012530299951322377
+    }
+  ],
+  "temporary_datablocks_released": true,
+  "coverage": "Sampled external views; occluded/internal surfaces need targeted inspection",
+  "target_members": [
+    "Cube"
+  ],
+  "profile": "full",
+  "final_coverage": true,
+  "expected_images": 124,
+  "wireframe": false,
+  "capture_signature": "4c056b9e984590d8ce1f46ff669dcdbeafcdcdcb3c4a2cba676295f736444180",
+  "prepare_seconds": 0.001341800030786544,
+  "elapsed_seconds": 2.235071400005836
+}

@@ -1,0 +1,19 @@
+test_clean_mesh_rejected_as_unnecessary (__main__.RepairTests.test_clean_mesh_rejected_as_unnecessary) ... ok
+test_duplicate_merge_requires_explicit_topology_budget (__main__.RepairTests.test_duplicate_merge_requires_explicit_topology_budget) ... ok
+test_local_smoothing_preserves_open_boundary (__main__.RepairTests.test_local_smoothing_preserves_open_boundary) ... ok
+test_loose_removal (__main__.RepairTests.test_loose_removal) ... ok
+test_plane_correction_and_displacement_limit (__main__.RepairTests.test_plane_correction_and_displacement_limit) ... ok
+test_preview_apply_and_rollback (__main__.RepairTests.test_preview_apply_and_rollback) ... ok
+test_rollback_rejects_unrecorded_edits (__main__.RepairTests.test_rollback_rejects_unrecorded_edits) ... ok
+test_shared_source_not_changed (__main__.RepairTests.test_shared_source_not_changed) ... ok
+test_stale_preview_blocked (__main__.RepairTests.test_stale_preview_blocked) ... ok
+test_tangential_relaxation (__main__.RepairTests.test_tangential_relaxation) ... ok
+test_uv_change_after_preview_blocks_apply (__main__.RepairTests.test_uv_change_after_preview_blocks_apply) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.123s
+
+OK
+Blender 5.4.0 Alpha (hash b1d561a6c0d6 built 2026-10-19 02:48:31)
+
+Blender quit

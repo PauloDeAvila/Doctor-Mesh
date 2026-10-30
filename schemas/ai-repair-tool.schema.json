@@ -1,0 +1,117 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "target_id": {
+      "type": "string"
+    },
+    "fingerprint": {
+      "type": "string"
+    },
+    "region": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "operation": {
+      "type": "string",
+      "enum": [
+        "fit_plane",
+        "merge_vertices",
+        "recalculate_normals",
+        "relax_local",
+        "remove_loose",
+        "smooth_local"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "distance": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "strength": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "iterations": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "origin": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "number"
+          }
+        },
+        "normal": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "required": [
+        "distance",
+        "strength",
+        "iterations",
+        "origin",
+        "normal"
+      ]
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_displacement": {
+          "type": "number"
+        },
+        "max_dimension_delta": {
+          "type": "number"
+        },
+        "max_topology_delta": {
+          "type": "integer"
+        },
+        "protected_vertices": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        }
+      },
+      "required": [
+        "max_displacement",
+        "max_dimension_delta",
+        "max_topology_delta",
+        "protected_vertices"
+      ]
+    }
+  },
+  "required": [
+    "target_id",
+    "fingerprint",
+    "region",
+    "operation",
+    "reason",
+    "parameters",
+    "constraints"
+  ]
+}

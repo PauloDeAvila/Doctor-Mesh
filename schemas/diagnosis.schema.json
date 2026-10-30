@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "stage": {
+      "type": "string",
+      "enum": [
+        "overview",
+        "component",
+        "region",
+        "planning"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "needs_more_data": {
+      "type": "boolean"
+    },
+    "requested_scans": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "target_id": {
+            "type": "string"
+          },
+          "region_id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "number"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "target_id",
+          "region_id",
+          "description",
+          "confidence",
+          "evidence"
+        ]
+      }
+    }
+  },
+  "required": [
+    "stage",
+    "summary",
+    "needs_more_data",
+    "requested_scans",
+    "observations"
+  ]
+}

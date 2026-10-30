@@ -1,0 +1,15 @@
+test_ambiguous_or_invalid_profiles_rejected (__main__.ReconstructionTests.test_ambiguous_or_invalid_profiles_rejected) ... ok
+test_annular_housing_has_real_inner_wall_and_no_open_edges (__main__.ReconstructionTests.test_annular_housing_has_real_inner_wall_and_no_open_edges) ... ok
+test_complete_extruded_solid (__main__.ReconstructionTests.test_complete_extruded_solid) ... ok
+test_concave_profile_is_fully_triangulated (__main__.ReconstructionTests.test_concave_profile_is_fully_triangulated) ... ok
+test_neighbor_intersection_and_containment_are_not_silently_accepted (__main__.ReconstructionTests.test_neighbor_intersection_and_containment_are_not_silently_accepted) ... ok
+test_wrong_attachment_rejected (__main__.ReconstructionTests.test_wrong_attachment_rejected) ... ok
+test_wrong_independent_dimensions_rejected (__main__.ReconstructionTests.test_wrong_independent_dimensions_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.028s
+
+OK
+Blender 5.4.0 Alpha (hash b1d561a6c0d6 built 2026-10-19 02:48:31)
+
+Blender quit

@@ -1,0 +1,64 @@
+test_bad_numeric_inputs_are_rejected (__main__.EfficiencyTests.test_bad_numeric_inputs_are_rejected) ... ok
+test_batch_failure_restores_all_source_data (__main__.EfficiencyTests.test_batch_failure_restores_all_source_data) ... ok
+test_batch_preserves_intervening_edits_and_keeps_original_on_success (__main__.EfficiencyTests.test_batch_preserves_intervening_edits_and_keeps_original_on_success) ... ok
+test_cache_invalidates_geometry_transform_sharp_and_config (__main__.EfficiencyTests.test_cache_invalidates_geometry_transform_sharp_and_config) ... ok
+test_cache_reuses_base_evaluated_and_next_scan (__main__.EfficiencyTests.test_cache_reuses_base_evaluated_and_next_scan) ... ok
+00:01.531  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpun5jg5jm\dc7e8040-86a7-4e26-846f-c9ec357b5b81\isolated_axis_pos_x.png'
+test_capture_quick_is_not_full_and_incomplete_is_not_complete (__main__.EfficiencyTests.test_capture_quick_is_not_full_and_incomplete_is_not_complete) ... ok
+test_closed_cube_passes_open_and_budget_cases_do_not (__main__.EfficiencyTests.test_closed_cube_passes_open_and_budget_cases_do_not) ... ok
+test_eager_archive_decodes_each_member_once (__main__.EfficiencyTests.test_eager_archive_decodes_each_member_once) ... ok
+test_evaluated_cache_uses_content_not_temporary_pointer (__main__.EfficiencyTests.test_evaluated_cache_uses_content_not_temporary_pointer) ... ok
+test_failed_frame_does_not_advance_and_budget_stops (__main__.EfficiencyTests.test_failed_frame_does_not_advance_and_budget_stops) ... ok
+00:01.938  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\isolated_axis_pos_x.png'
+00:01.953  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\isolated_axis_neg_x.png'
+00:01.953  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\isolated_axis_pos_y.png'
+00:01.985  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\isolated_axis_neg_y.png'
+00:01.985  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\isolated_top.png'
+00:02.000  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\isolated_bottom.png'
+00:02.016  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\isolated_diagonal_1_-1_1.png'
+00:02.031  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\isolated_diagonal_-1_1_-1.png'
+00:02.047  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\assembled_axis_pos_x.png'
+00:02.047  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\assembled_axis_neg_x.png'
+00:02.063  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\assembled_axis_pos_y.png'
+00:02.078  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\assembled_axis_neg_y.png'
+00:02.094  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\assembled_top.png'
+00:02.110  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\assembled_bottom.png'
+00:02.110  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\assembled_diagonal_1_-1_1.png'
+00:02.125  render           | Saved: 'C:\Users\phsra\AppData\Local\Temp\tmpabwxmgy0\0bf8b910-438e-4deb-8376-40aa7610a2f6\assembled_diagonal_-1_1_-1.png'
+test_full_candidate_requires_reviewed_unchanged_quick_evidence (__main__.EfficiencyTests.test_full_candidate_requires_reviewed_unchanged_quick_evidence) ... ok
+test_incomplete_and_corrupt_measurements_are_not_reused (__main__.EfficiencyTests.test_incomplete_and_corrupt_measurements_are_not_reused) ... ok
+test_measured_circle_catches_oval (__main__.EfficiencyTests.test_measured_circle_catches_oval) ... ok
+test_measured_plane_group_catches_warped_triangles (__main__.EfficiencyTests.test_measured_plane_group_catches_warped_triangles) ... ok
+test_opposed_planar_contact_requires_specific_plane (__main__.EfficiencyTests.test_opposed_planar_contact_requires_specific_plane) ... ok
+test_same_facing_duplicate_interface_is_rejected (__main__.EfficiencyTests.test_same_facing_duplicate_interface_is_rejected) ... ok
+test_small_geometry_does_not_collapse_under_world_translation (__main__.EfficiencyTests.test_small_geometry_does_not_collapse_under_world_translation) ... ok
+test_source_snapshot_rejects_changed_mold_or_frame (__main__.EfficiencyTests.test_source_snapshot_rejects_changed_mold_or_frame) ... ok
+test_through_cut_overshoots_both_stock_caps (__main__.EfficiencyTests.test_through_cut_overshoots_both_stock_caps) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 2.261s
+
+OK
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Warning: addon-module ai_mesh_doctor found module but without '__addon_enabled__' field, possible name collision from file: 'C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\ai_mesh_doctor\\__init__.py'
+Blender 5.4.0 Alpha (hash b1d561a6c0d6 built 2026-10-19 02:48:31)
+
+Blender quit
+Error: Not freed memory blocks: 8, total unfreed memory 0.000031 MB

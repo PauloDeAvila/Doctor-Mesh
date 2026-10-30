@@ -1,0 +1,18 @@
+test_additional_scan_request (__main__.AIContract.test_additional_scan_request) ... ok
+test_cost_budget_denies_expensive_request (__main__.AIContract.test_cost_budget_denies_expensive_request) ... ok
+test_invented_target_rejected (__main__.AIContract.test_invented_target_rejected) ... ok
+test_model_plan_is_validated_but_never_executed (__main__.AIContract.test_model_plan_is_validated_but_never_executed) ... ok
+test_network_opt_in (__main__.AIContract.test_network_opt_in) ... ok
+test_provider_failure_has_no_blender_mutation_path (__main__.AIContract.test_provider_failure_has_no_blender_mutation_path) ... ok
+test_request_and_payload_budgets (__main__.AIContract.test_request_and_payload_budgets) ... ok
+test_strict_operation_registry_and_stale_fingerprint (__main__.AIContract.test_strict_operation_registry_and_stale_fingerprint) ... ok
+test_unknown_tool_rejected (__main__.AIContract.test_unknown_tool_rejected) ... ok
+test_valid_response_and_no_store (__main__.AIContract.test_valid_response_and_no_store) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK
+Blender 5.4.0 Alpha (hash b1d561a6c0d6 built 2026-10-19 02:48:31)
+
+Blender quit

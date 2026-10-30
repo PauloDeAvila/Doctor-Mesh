@@ -1,0 +1,81 @@
+{
+  "policy": {
+    "schema_version": "1.0.0",
+    "functional_parts_separate": true,
+    "complementary_fragments_rebuild_as_one_part": true,
+    "arbitrary_caps_or_patch_objects": false,
+    "unclassified_boundaries_block_acceptance": true,
+    "require_measured_units_axes_profiles_thickness": true,
+    "require_attachment_and_neighbor_constraints": true,
+    "require_before_after_horizontal_and_vertical_orbits": true,
+    "require_isolated_and_assembled_views": true,
+    "require_geometric_and_visual_validation_separately": true,
+    "source_inside_same_project": true,
+    "successive_blend_backups": false,
+    "cleanup_owned_temporary_captures_only_after_explicit_approval": true,
+    "reuse_requires_new_measurements_and_validation": true
+  },
+  "sources": [
+    {
+      "name": "blender-mecha-design",
+      "path": "C:\\Users\\phsra\\.codex\\skills\\blender-mecha-design\\SKILL.md",
+      "available": true,
+      "sha256": "2250e876e64df7be64401dcfb8d5ea0dfd967275ddc3c17990f699fea6352ab4"
+    },
+    {
+      "name": "blender-mecha-anatomy",
+      "path": "C:\\Users\\phsra\\.codex\\skills\\blender-mecha-anatomy\\SKILL.md",
+      "available": true,
+      "sha256": "276368df6423e0dc792b8ebfe6e2fe096eaa93772f1712cecfff21770261f147"
+    },
+    {
+      "name": "blender-mecha-optics",
+      "path": "C:\\Users\\phsra\\.codex\\skills\\blender-mecha-optics\\SKILL.md",
+      "available": true,
+      "sha256": "0bacb80c395a5bab797e5680faa208436646a648cd75f821d3654ac21fc62ce4"
+    },
+    {
+      "name": "blender-mecha-eyes",
+      "path": "C:\\Users\\phsra\\.codex\\skills\\blender-mecha-eyes\\SKILL.md",
+      "available": true,
+      "sha256": "5cbc5f3390d708353f171b75be3542d68160467d55bf61136deafed0d76a033b"
+    },
+    {
+      "name": "blender-mecha-interfaces",
+      "path": "C:\\Users\\phsra\\.codex\\skills\\blender-mecha-interfaces\\SKILL.md",
+      "available": true,
+      "sha256": "b2f651b228413b01a6d461cda6488a603e25ebd57d4b4000523c2ef095d04932"
+    },
+    {
+      "name": "blender-mecha-multiview",
+      "path": "C:\\Users\\phsra\\.codex\\skills\\blender-mecha-multiview\\SKILL.md",
+      "available": true,
+      "sha256": "01ab5449c51db7eb393270b0a9d905cfbc3c1af1021b8aa0f7bc92e2f126b97e"
+    },
+    {
+      "name": "blender-local-part-refactor",
+      "path": "C:\\Users\\phsra\\.codex\\skills\\blender-local-part-refactor\\SKILL.md",
+      "available": true,
+      "sha256": "813885ccf64f60129bb5eda25c41c331175737477e79fa40f474b375cb64aa2f"
+    },
+    {
+      "name": "blender-dimensional-part-rebuild",
+      "path": "C:\\Users\\phsra\\.codex\\skills\\blender-dimensional-part-rebuild\\SKILL.md",
+      "available": true,
+      "sha256": "8d43dc8136ca4984a1554fb4848255574b6e04ca7cbfeba4b3cc9e09df8d769f"
+    },
+    {
+      "name": "hard-surface",
+      "path": "C:\\Users\\phsra\\.codex\\skills\\hard-surface\\SKILL.md",
+      "available": true,
+      "sha256": "353ea5be095fd3cc9d3b4651a23087e3b20b43eb8a0759f99c227031ae96cb37"
+    },
+    {
+      "name": "protocolo-integral-360",
+      "path": "C:\\Users\\phsra\\.codex\\skills\\blender-dimensional-part-rebuild\\references\\protocolo-integral-360.md",
+      "available": true,
+      "sha256": "5374d51f8efa2615602a0f9fea62a8889d722fb0d4a9c739c4bad45b75a0d787"
+    }
+  ],
+  "interpretation": "Skills guide decisions; availability does not certify an algorithm"
+}

@@ -1,0 +1,2581 @@
+{
+  "schema_version": "1.0.0",
+  "session_id": "f5f401e8-c216-4521-a9bf-f7e9d9bb88fa",
+  "created_at": "2026-10-28T20:11:17.291051+00:00",
+  "status": "complete",
+  "source": "C:\\Users\\phsra\\OneDrive\\Documents\\ChatGPT\\blender\\ai_mesh_doctor\\project\\AI_Mesh_Doctor_Demo.blend",
+  "blender_version": "5.4.0 Alpha",
+  "units": {
+    "system": "METRIC",
+    "scale_length": 1.0,
+    "metric_space": "world_blender_units",
+    "meters_per_world_unit": 1.0
+  },
+  "config": {
+    "distance_tolerance": 1e-06,
+    "area_tolerance": 1e-12,
+    "max_vertices": 250000,
+    "max_region_indices": 512,
+    "max_duplicate_pairs": 1000,
+    "inspect_evaluated": true,
+    "max_seconds": 120.0
+  },
+  "selected_only": false,
+  "objects": [
+    {
+      "id": "381722ac-db89-45ed-9630-9dee8836d1c6",
+      "name": "CASE_A | Deliberately reversed face",
+      "type": "MESH",
+      "collections": [
+        "Mesh Doctor | Demonstration Cases"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -1.7000000476837158
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -1.7000000476837158
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_bounds": {
+        "min": [
+          -2.25,
+          -0.550000011920929,
+          -0.550000011920929
+        ],
+        "max": [
+          -1.1500000953674316,
+          0.550000011920929,
+          0.550000011920929
+        ]
+      },
+      "dimensions": [
+        1.100000023841858,
+        1.100000023841858,
+        1.100000023841858
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_determinant": 1.0,
+      "visible": true,
+      "hide_render": false,
+      "editable": true,
+      "dependencies": {
+        "parent_id": null,
+        "children_ids": [],
+        "instance_type": "NONE",
+        "instance_collection": null,
+        "modifiers": [],
+        "constraints": [],
+        "drivers": [],
+        "library": null
+      },
+      "mesh_id": "fcf78ed8-710c-4079-a620-db2ceff96bd4",
+      "mesh_users": 1,
+      "materials": {
+        "slots": [],
+        "uv_maps": [],
+        "attributes": [
+          {
+            "name": "sharp_face",
+            "domain": "FACE",
+            "data_type": "BOOLEAN"
+          },
+          {
+            "name": "position",
+            "domain": "POINT",
+            "data_type": "FLOAT_VECTOR"
+          },
+          {
+            "name": ".edge_verts",
+            "domain": "EDGE",
+            "data_type": "INT32_2D"
+          },
+          {
+            "name": ".corner_vert",
+            "domain": "CORNER",
+            "data_type": "INT"
+          },
+          {
+            "name": ".corner_edge",
+            "domain": "CORNER",
+            "data_type": "INT"
+          }
+        ],
+        "custom_normals": false,
+        "shape_keys": [],
+        "uv_distortion": "not_tested",
+        "baking_artifacts": "not_tested"
+      },
+      "base": {
+        "status": "complete",
+        "fingerprint": "3fd16b60850e210e331543ec42efb1811546a4f21afad7518fae678e41c5ef96",
+        "vertices": 8,
+        "edges": 12,
+        "faces": 6,
+        "polygon_distribution": {
+          "4": 6
+        },
+        "edge_length_world": {
+          "min": 1.0999999046325684,
+          "max": 1.100000023841858,
+          "mean": 1.099999984105428
+        },
+        "face_area_world": {
+          "min": 1.209999918937683,
+          "max": 1.2100000381469727,
+          "mean": 1.2099999984105427
+        },
+        "planarity_deviation_world": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "edge_ratio": {
+          "min": 1.0,
+          "max": 1.0000001083720909,
+          "mean": 1.0000000722480606
+        },
+        "dihedral_angle_radians": {
+          "min": 1.570796251296997,
+          "max": 1.570796251296997,
+          "mean": 1.570796251296997
+        },
+        "sharp_edges": 0,
+        "normal_summary": {
+          "space": "world",
+          "face_length": {
+            "min": 1.0,
+            "max": 1.0,
+            "mean": 1.0
+          }
+        },
+        "boundary_edge_count": 0,
+        "radial_edge_count": 0,
+        "nonmanifold_vertex_count": 0,
+        "degenerate_face_count": 0,
+        "winding_edge_count": 4,
+        "loose_edge_count": 0,
+        "loose_vertex_count": 0,
+        "duplicate_pair_count": 0,
+        "duplicate_count_is_lower_bound": false,
+        "island_count": 1,
+        "shells": [
+          {
+            "vertices": 8,
+            "faces": 6,
+            "closed": true,
+            "signed_volume_world": -0.4840000470479329,
+            "orientation": "negative_candidate"
+          }
+        ],
+        "regions": [],
+        "closed_topology_candidate": false,
+        "findings": [
+          {
+            "type": "inconsistent_winding",
+            "severity": "error",
+            "confidence": 1.0,
+            "count": 4,
+            "indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "indices_truncated": false,
+            "safe_to_automate": false,
+            "complexity": "requires_context",
+            "images": [],
+            "interpretation": "measured_observation"
+          },
+          {
+            "type": "negative_shell_volume",
+            "severity": "warning",
+            "confidence": 0.7,
+            "safe_to_automate": false,
+            "images": [],
+            "complexity": "requires_context",
+            "interpretation": "May be an intentional inner cavity shell or mirrored transform"
+          }
+        ],
+        "coverage": {
+          "self_intersections": "not_tested",
+          "containment": "not_tested",
+          "assembly_gaps": "not_tested",
+          "symmetry": "not_inferred",
+          "cylindrical_fit": "not_tested",
+          "manufacturing": "not_certified"
+        }
+      },
+      "evaluated": {
+        "status": "complete",
+        "fingerprint": "3fd16b60850e210e331543ec42efb1811546a4f21afad7518fae678e41c5ef96",
+        "vertices": 8,
+        "edges": 12,
+        "faces": 6,
+        "polygon_distribution": {
+          "4": 6
+        },
+        "edge_length_world": {
+          "min": 1.0999999046325684,
+          "max": 1.100000023841858,
+          "mean": 1.099999984105428
+        },
+        "face_area_world": {
+          "min": 1.209999918937683,
+          "max": 1.2100000381469727,
+          "mean": 1.2099999984105427
+        },
+        "planarity_deviation_world": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "edge_ratio": {
+          "min": 1.0,
+          "max": 1.0000001083720909,
+          "mean": 1.0000000722480606
+        },
+        "dihedral_angle_radians": {
+          "min": 1.570796251296997,
+          "max": 1.570796251296997,
+          "mean": 1.570796251296997
+        },
+        "sharp_edges": 0,
+        "normal_summary": {
+          "space": "world",
+          "face_length": {
+            "min": 1.0,
+            "max": 1.0,
+            "mean": 1.0
+          }
+        },
+        "boundary_edge_count": 0,
+        "radial_edge_count": 0,
+        "nonmanifold_vertex_count": 0,
+        "degenerate_face_count": 0,
+        "winding_edge_count": 4,
+        "loose_edge_count": 0,
+        "loose_vertex_count": 0,
+        "duplicate_pair_count": 0,
+        "duplicate_count_is_lower_bound": false,
+        "island_count": 1,
+        "shells": [
+          {
+            "vertices": 8,
+            "faces": 6,
+            "closed": true,
+            "signed_volume_world": -0.4840000470479329,
+            "orientation": "negative_candidate"
+          }
+        ],
+        "regions": [],
+        "closed_topology_candidate": false,
+        "findings": [
+          {
+            "type": "inconsistent_winding",
+            "severity": "error",
+            "confidence": 1.0,
+            "count": 4,
+            "indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "indices_truncated": false,
+            "safe_to_automate": false,
+            "complexity": "requires_context",
+            "images": [],
+            "interpretation": "measured_observation"
+          },
+          {
+            "type": "negative_shell_volume",
+            "severity": "warning",
+            "confidence": 0.7,
+            "safe_to_automate": false,
+            "images": [],
+            "complexity": "requires_context",
+            "interpretation": "May be an intentional inner cavity shell or mirrored transform"
+          }
+        ],
+        "coverage": {
+          "self_intersections": "not_tested",
+          "containment": "not_tested",
+          "assembly_gaps": "not_tested",
+          "symmetry": "not_inferred",
+          "cylindrical_fit": "not_tested",
+          "manufacturing": "not_certified"
+        },
+        "index_mapping": "Independent domain; indices cannot target base mesh"
+      }
+    },
+    {
+      "id": "4666387a-7ade-4037-b1e5-ac9f8825a608",
+      "name": "CASE_B | Missing face - intent needs review",
+      "type": "MESH",
+      "collections": [
+        "Mesh Doctor | Demonstration Cases"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_bounds": {
+        "min": [
+          -0.550000011920929,
+          -0.550000011920929,
+          -0.550000011920929
+        ],
+        "max": [
+          0.550000011920929,
+          0.550000011920929,
+          0.550000011920929
+        ]
+      },
+      "dimensions": [
+        1.100000023841858,
+        1.100000023841858,
+        1.100000023841858
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_determinant": 1.0,
+      "visible": true,
+      "hide_render": false,
+      "editable": true,
+      "dependencies": {
+        "parent_id": null,
+        "children_ids": [],
+        "instance_type": "NONE",
+        "instance_collection": null,
+        "modifiers": [],
+        "constraints": [],
+        "drivers": [],
+        "library": null
+      },
+      "mesh_id": "f9c099a9-3ca1-40b2-87ec-2eabd3fa364c",
+      "mesh_users": 1,
+      "materials": {
+        "slots": [],
+        "uv_maps": [],
+        "attributes": [
+          {
+            "name": "sharp_face",
+            "domain": "FACE",
+            "data_type": "BOOLEAN"
+          },
+          {
+            "name": "position",
+            "domain": "POINT",
+            "data_type": "FLOAT_VECTOR"
+          },
+          {
+            "name": ".edge_verts",
+            "domain": "EDGE",
+            "data_type": "INT32_2D"
+          },
+          {
+            "name": ".corner_vert",
+            "domain": "CORNER",
+            "data_type": "INT"
+          },
+          {
+            "name": ".corner_edge",
+            "domain": "CORNER",
+            "data_type": "INT"
+          }
+        ],
+        "custom_normals": false,
+        "shape_keys": [],
+        "uv_distortion": "not_tested",
+        "baking_artifacts": "not_tested"
+      },
+      "base": {
+        "status": "complete",
+        "fingerprint": "82df9011f99b5f40de8335a7c8a7cd7dce583bb4c7a7b67d326e0fb947a86e7d",
+        "vertices": 8,
+        "edges": 12,
+        "faces": 5,
+        "polygon_distribution": {
+          "4": 5
+        },
+        "edge_length_world": {
+          "min": 1.100000023841858,
+          "max": 1.100000023841858,
+          "mean": 1.100000023841858
+        },
+        "face_area_world": {
+          "min": 1.2100000381469727,
+          "max": 1.2100000381469727,
+          "mean": 1.2100000381469727
+        },
+        "planarity_deviation_world": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "edge_ratio": {
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0
+        },
+        "dihedral_angle_radians": {
+          "min": 1.570796251296997,
+          "max": 1.570796251296997,
+          "mean": 1.570796251296997
+        },
+        "sharp_edges": 0,
+        "normal_summary": {
+          "space": "world",
+          "face_length": {
+            "min": 1.0,
+            "max": 1.0,
+            "mean": 1.0
+          }
+        },
+        "boundary_edge_count": 4,
+        "radial_edge_count": 0,
+        "nonmanifold_vertex_count": 0,
+        "degenerate_face_count": 0,
+        "winding_edge_count": 0,
+        "loose_edge_count": 0,
+        "loose_vertex_count": 0,
+        "duplicate_pair_count": 0,
+        "duplicate_count_is_lower_bound": false,
+        "island_count": 1,
+        "shells": [
+          {
+            "vertices": 8,
+            "faces": 5,
+            "closed": false,
+            "signed_volume_world": null,
+            "orientation": "undetermined"
+          }
+        ],
+        "regions": [
+          {
+            "id": "boundary-0",
+            "edge_count": 4,
+            "edge_indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "indices_truncated": false,
+            "closed_loop": true,
+            "perimeter_world": 4.400000095367432,
+            "intent": "unknown",
+            "automatic_fill_allowed": false
+          }
+        ],
+        "closed_topology_candidate": false,
+        "findings": [
+          {
+            "type": "boundary_edges_intent_unknown",
+            "severity": "warning",
+            "confidence": 1.0,
+            "count": 4,
+            "indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "indices_truncated": false,
+            "safe_to_automate": false,
+            "complexity": "requires_context",
+            "images": [],
+            "interpretation": "measured_observation"
+          }
+        ],
+        "coverage": {
+          "self_intersections": "not_tested",
+          "containment": "not_tested",
+          "assembly_gaps": "not_tested",
+          "symmetry": "not_inferred",
+          "cylindrical_fit": "not_tested",
+          "manufacturing": "not_certified"
+        }
+      },
+      "evaluated": {
+        "status": "complete",
+        "fingerprint": "82df9011f99b5f40de8335a7c8a7cd7dce583bb4c7a7b67d326e0fb947a86e7d",
+        "vertices": 8,
+        "edges": 12,
+        "faces": 5,
+        "polygon_distribution": {
+          "4": 5
+        },
+        "edge_length_world": {
+          "min": 1.100000023841858,
+          "max": 1.100000023841858,
+          "mean": 1.100000023841858
+        },
+        "face_area_world": {
+          "min": 1.2100000381469727,
+          "max": 1.2100000381469727,
+          "mean": 1.2100000381469727
+        },
+        "planarity_deviation_world": {
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "edge_ratio": {
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0
+        },
+        "dihedral_angle_radians": {
+          "min": 1.570796251296997,
+          "max": 1.570796251296997,
+          "mean": 1.570796251296997
+        },
+        "sharp_edges": 0,
+        "normal_summary": {
+          "space": "world",
+          "face_length": {
+            "min": 1.0,
+            "max": 1.0,
+            "mean": 1.0
+          }
+        },
+        "boundary_edge_count": 4,
+        "radial_edge_count": 0,
+        "nonmanifold_vertex_count": 0,
+        "degenerate_face_count": 0,
+        "winding_edge_count": 0,
+        "loose_edge_count": 0,
+        "loose_vertex_count": 0,
+        "duplicate_pair_count": 0,
+        "duplicate_count_is_lower_bound": false,
+        "island_count": 1,
+        "shells": [
+          {
+            "vertices": 8,
+            "faces": 5,
+            "closed": false,
+            "signed_volume_world": null,
+            "orientation": "undetermined"
+          }
+        ],
+        "regions": [
+          {
+            "id": "boundary-0",
+            "edge_count": 4,
+            "edge_indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "indices_truncated": false,
+            "closed_loop": true,
+            "perimeter_world": 4.400000095367432,
+            "intent": "unknown",
+            "automatic_fill_allowed": false
+          }
+        ],
+        "closed_topology_candidate": false,
+        "findings": [
+          {
+            "type": "boundary_edges_intent_unknown",
+            "severity": "warning",
+            "confidence": 1.0,
+            "count": 4,
+            "indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "indices_truncated": false,
+            "safe_to_automate": false,
+            "complexity": "requires_context",
+            "images": [],
+            "interpretation": "measured_observation"
+          }
+        ],
+        "coverage": {
+          "self_intersections": "not_tested",
+          "containment": "not_tested",
+          "assembly_gaps": "not_tested",
+          "symmetry": "not_inferred",
+          "cylindrical_fit": "not_tested",
+          "manufacturing": "not_certified"
+        },
+        "index_mapping": "Independent domain; indices cannot target base mesh"
+      }
+    },
+    {
+      "id": "ac1b80dd-91e1-43cd-8d24-4dbf3aee1019",
+      "name": "CASE_C | Closed annular mechanical housing",
+      "type": "MESH",
+      "collections": [
+        "Mesh Doctor | Demonstration Cases"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          1.7000000476837158
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          1.7000000476837158
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_bounds": {
+        "min": [
+          1.1500000953674316,
+          -0.550000011920929,
+          -0.44999998807907104
+        ],
+        "max": [
+          2.25,
+          0.550000011920929,
+          0.44999998807907104
+        ]
+      },
+      "dimensions": [
+        1.100000023841858,
+        1.100000023841858,
+        0.8999999761581421
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_determinant": 1.0,
+      "visible": true,
+      "hide_render": false,
+      "editable": true,
+      "dependencies": {
+        "parent_id": null,
+        "children_ids": [],
+        "instance_type": "NONE",
+        "instance_collection": null,
+        "modifiers": [],
+        "constraints": [],
+        "drivers": [],
+        "library": null
+      },
+      "mesh_id": "0f3e3b6f-0202-4e45-80c0-aee54f4a5f24",
+      "mesh_users": 1,
+      "materials": {
+        "slots": [],
+        "uv_maps": [],
+        "attributes": [
+          {
+            "name": ".select_vert",
+            "domain": "POINT",
+            "data_type": "BOOLEAN"
+          },
+          {
+            "name": ".select_edge",
+            "domain": "EDGE",
+            "data_type": "BOOLEAN"
+          },
+          {
+            "name": ".select_poly",
+            "domain": "FACE",
+            "data_type": "BOOLEAN"
+          },
+          {
+            "name": "sharp_face",
+            "domain": "FACE",
+            "data_type": "BOOLEAN"
+          },
+          {
+            "name": "position",
+            "domain": "POINT",
+            "data_type": "FLOAT_VECTOR"
+          },
+          {
+            "name": ".edge_verts",
+            "domain": "EDGE",
+            "data_type": "INT32_2D"
+          },
+          {
+            "name": ".corner_vert",
+            "domain": "CORNER",
+            "data_type": "INT"
+          },
+          {
+            "name": ".corner_edge",
+            "domain": "CORNER",
+            "data_type": "INT"
+          }
+        ],
+        "custom_normals": false,
+        "shape_keys": [],
+        "uv_distortion": "not_tested",
+        "baking_artifacts": "not_tested"
+      },
+      "base": {
+        "status": "complete",
+        "fingerprint": "05ee58e94a5bee6e1dd4f3543ff60827f6035eac8bfc34e57c82713f08ff5e73",
+        "vertices": 384,
+        "edges": 768,
+        "faces": 384,
+        "polygon_distribution": {
+          "4": 384
+        },
+        "edge_length_world": {
+          "min": 0.022903282195329666,
+          "max": 0.8999999761581421,
+          "mean": 0.28972358446723473
+        },
+        "face_area_world": {
+          "min": 0.0058862678706645966,
+          "max": 0.03239200636744499,
+          "mean": 0.016194368981814478
+        },
+        "planarity_deviation_world": {
+          "min": 0.0,
+          "max": 1.1920928955078125e-07,
+          "mean": 1.6025296645238996e-08
+        },
+        "edge_ratio": {
+          "min": 8.73230624095249,
+          "max": 39.2956768589991,
+          "mean": 20.441624206958846
+        },
+        "dihedral_angle_radians": {
+          "min": 0.0,
+          "max": 1.5707964897155762,
+          "mean": 0.801760584465228
+        },
+        "sharp_edges": 0,
+        "normal_summary": {
+          "space": "world",
+          "face_length": {
+            "min": 0.9999998956918662,
+            "max": 1.0000000894069632,
+            "mean": 0.9999999968825547
+          }
+        },
+        "boundary_edge_count": 0,
+        "radial_edge_count": 0,
+        "nonmanifold_vertex_count": 0,
+        "degenerate_face_count": 0,
+        "winding_edge_count": 0,
+        "loose_edge_count": 0,
+        "loose_vertex_count": 0,
+        "duplicate_pair_count": 0,
+        "duplicate_count_is_lower_bound": false,
+        "island_count": 1,
+        "shells": [
+          {
+            "vertices": 384,
+            "faces": 384,
+            "closed": true,
+            "signed_volume_world": 0.508574839276965,
+            "orientation": "undetermined"
+          }
+        ],
+        "regions": [],
+        "closed_topology_candidate": true,
+        "findings": [],
+        "coverage": {
+          "self_intersections": "not_tested",
+          "containment": "not_tested",
+          "assembly_gaps": "not_tested",
+          "symmetry": "not_inferred",
+          "cylindrical_fit": "not_tested",
+          "manufacturing": "not_certified"
+        }
+      },
+      "evaluated": {
+        "status": "complete",
+        "fingerprint": "05ee58e94a5bee6e1dd4f3543ff60827f6035eac8bfc34e57c82713f08ff5e73",
+        "vertices": 384,
+        "edges": 768,
+        "faces": 384,
+        "polygon_distribution": {
+          "4": 384
+        },
+        "edge_length_world": {
+          "min": 0.022903282195329666,
+          "max": 0.8999999761581421,
+          "mean": 0.28972358446723473
+        },
+        "face_area_world": {
+          "min": 0.0058862678706645966,
+          "max": 0.03239200636744499,
+          "mean": 0.016194368981814478
+        },
+        "planarity_deviation_world": {
+          "min": 0.0,
+          "max": 1.1920928955078125e-07,
+          "mean": 1.6025296645238996e-08
+        },
+        "edge_ratio": {
+          "min": 8.73230624095249,
+          "max": 39.2956768589991,
+          "mean": 20.441624206958846
+        },
+        "dihedral_angle_radians": {
+          "min": 0.0,
+          "max": 1.5707964897155762,
+          "mean": 0.801760584465228
+        },
+        "sharp_edges": 0,
+        "normal_summary": {
+          "space": "world",
+          "face_length": {
+            "min": 0.9999998956918662,
+            "max": 1.0000000894069632,
+            "mean": 0.9999999968825547
+          }
+        },
+        "boundary_edge_count": 0,
+        "radial_edge_count": 0,
+        "nonmanifold_vertex_count": 0,
+        "degenerate_face_count": 0,
+        "winding_edge_count": 0,
+        "loose_edge_count": 0,
+        "loose_vertex_count": 0,
+        "duplicate_pair_count": 0,
+        "duplicate_count_is_lower_bound": false,
+        "island_count": 1,
+        "shells": [
+          {
+            "vertices": 384,
+            "faces": 384,
+            "closed": true,
+            "signed_volume_world": 0.508574839276965,
+            "orientation": "undetermined"
+          }
+        ],
+        "regions": [],
+        "closed_topology_candidate": true,
+        "findings": [],
+        "coverage": {
+          "self_intersections": "not_tested",
+          "containment": "not_tested",
+          "assembly_gaps": "not_tested",
+          "symmetry": "not_inferred",
+          "cylindrical_fit": "not_tested",
+          "manufacturing": "not_certified"
+        },
+        "index_mapping": "Independent domain; indices cannot target base mesh"
+      }
+    },
+    {
+      "id": "e562cb57-9ce5-4625-8c13-ad2327ded4df",
+      "name": "WHITE LAB | Camera Octane",
+      "type": "CAMERA",
+      "collections": [
+        "Scene Collection"
+      ],
+      "world_matrix": [
+        [
+          0.9054778814315796,
+          -0.13156551122665405,
+          0.4034852683544159,
+          4.035584926605225
+        ],
+        [
+          0.42439350485801697,
+          0.2807057201862335,
+          -0.8608684539794922,
+          -8.610247611999512
+        ],
+        [
+          -3.2248792081190913e-08,
+          0.9507338404655457,
+          0.31000837683677673,
+          3.100647449493408
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local_matrix": [
+        [
+          0.9054778814315796,
+          -0.13156551122665405,
+          0.4034852683544159,
+          4.035584926605225
+        ],
+        [
+          0.42439350485801697,
+          0.2807057201862335,
+          -0.8608684539794922,
+          -8.610247611999512
+        ],
+        [
+          -3.2248792081190913e-08,
+          0.9507338404655457,
+          0.31000837683677673,
+          3.100647449493408
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_bounds": {
+        "min": [
+          4.035584926605225,
+          -8.610247611999512,
+          3.100647449493408
+        ],
+        "max": [
+          4.035584926605225,
+          -8.610247611999512,
+          3.100647449493408
+        ]
+      },
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_determinant": 1.0,
+      "visible": true,
+      "hide_render": false,
+      "editable": true,
+      "dependencies": {
+        "parent_id": null,
+        "children_ids": [],
+        "instance_type": "NONE",
+        "instance_collection": null,
+        "modifiers": [],
+        "constraints": [],
+        "drivers": [],
+        "library": null
+      }
+    },
+    {
+      "id": "9adbecbd-e062-4400-9bcb-2fe2bbb48113",
+      "name": "WHITE LAB | Ceiling softbox.001",
+      "type": "LIGHT",
+      "collections": [
+        "WHITE LAB | Ambiente.001"
+      ],
+      "world_matrix": [
+        [
+          0.9410002827644348,
+          -0.33704689145088196,
+          0.030296690762043,
+          0.13536232709884644
+        ],
+        [
+          0.3384058177471161,
+          0.9372215867042542,
+          -0.08424504101276398,
+          -0.3764001131057739
+        ],
+        [
+          -1.8316588068501005e-07,
+          0.0895271822810173,
+          0.9959843754768372,
+          4.449999809265137
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local_matrix": [
+        [
+          0.9410002827644348,
+          -0.33704689145088196,
+          0.030296690762043,
+          0.13536232709884644
+        ],
+        [
+          0.3384058177471161,
+          0.9372215867042542,
+          -0.08424504101276398,
+          -0.3764001131057739
+        ],
+        [
+          -1.8316588068501005e-07,
+          0.0895271822810173,
+          0.9959843754768372,
+          4.449999809265137
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_bounds": {
+        "min": [
+          0.13536232709884644,
+          -0.3764001131057739,
+          4.449999809265137
+        ],
+        "max": [
+          0.13536232709884644,
+          -0.3764001131057739,
+          4.449999809265137
+        ]
+      },
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_determinant": 1.0,
+      "visible": true,
+      "hide_render": false,
+      "editable": true,
+      "dependencies": {
+        "parent_id": null,
+        "children_ids": [],
+        "instance_type": "NONE",
+        "instance_collection": null,
+        "modifiers": [],
+        "constraints": [],
+        "drivers": [],
+        "library": null
+      }
+    },
+    {
+      "id": "f2521861-86ee-4f49-a709-8f2d376abeb2",
+      "name": "WHITE LAB | Front fill.001",
+      "type": "LIGHT",
+      "collections": [
+        "WHITE LAB | Ambiente.001"
+      ],
+      "world_matrix": [
+        [
+          0.987603485584259,
+          0.07304400950670242,
+          -0.13893841207027435,
+          -0.716577410697937
+        ],
+        [
+          -0.15696914494037628,
+          0.45957136154174805,
+          -0.8741595149040222,
+          -4.508493900299072
+        ],
+        [
+          1.0992406984655645e-09,
+          0.8851320147514343,
+          0.4653399586677551,
+          2.4000000953674316
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local_matrix": [
+        [
+          0.987603485584259,
+          0.07304400950670242,
+          -0.13893841207027435,
+          -0.716577410697937
+        ],
+        [
+          -0.15696914494037628,
+          0.45957136154174805,
+          -0.8741595149040222,
+          -4.508493900299072
+        ],
+        [
+          1.0992406984655645e-09,
+          0.8851320147514343,
+          0.4653399586677551,
+          2.4000000953674316
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_bounds": {
+        "min": [
+          -0.716577410697937,
+          -4.508493900299072,
+          2.4000000953674316
+        ],
+        "max": [
+          -0.716577410697937,
+          -4.508493900299072,
+          2.4000000953674316
+        ]
+      },
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_determinant": 0.9999999403953552,
+      "visible": true,
+      "hide_render": false,
+      "editable": true,
+      "dependencies": {
+        "parent_id": null,
+        "children_ids": [],
+        "instance_type": "NONE",
+        "instance_collection": null,
+        "modifiers": [],
+        "constraints": [],
+        "drivers": [],
+        "library": null
+      }
+    },
+    {
+      "id": "13016613-d170-4ab0-8bb1-6b1367d8f421",
+      "name": "WHITE LAB | Sala branca.001",
+      "type": "MESH",
+      "collections": [
+        "WHITE LAB | Ambiente.001"
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_bounds": {
+        "min": [
+          -36.15299606323242,
+          -51.58467102050781,
+          -2.029036283493042
+        ],
+        "max": [
+          49.4281120300293,
+          25.801509857177734,
+          27.970964431762695
+        ]
+      },
+      "dimensions": [
+        85.58110809326172,
+        77.38618469238281,
+        30.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_determinant": 1.0,
+      "visible": true,
+      "hide_render": false,
+      "editable": true,
+      "dependencies": {
+        "parent_id": null,
+        "children_ids": [],
+        "instance_type": "NONE",
+        "instance_collection": null,
+        "modifiers": [],
+        "constraints": [],
+        "drivers": [],
+        "library": null
+      },
+      "mesh_id": "5a325dfc-2909-4d80-8a70-f750f226b344",
+      "mesh_users": 1,
+      "materials": {
+        "slots": [
+          {
+            "index": 0,
+            "name": "WHITE LAB | Gesso acetinado marfim",
+            "link": "DATA",
+            "nodes": true
+          }
+        ],
+        "uv_maps": [],
+        "attributes": [
+          {
+            "name": ".select_vert",
+            "domain": "POINT",
+            "data_type": "BOOLEAN"
+          },
+          {
+            "name": "position",
+            "domain": "POINT",
+            "data_type": "FLOAT_VECTOR"
+          },
+          {
+            "name": ".corner_vert",
+            "domain": "CORNER",
+            "data_type": "INT"
+          },
+          {
+            "name": ".corner_edge",
+            "domain": "CORNER",
+            "data_type": "INT"
+          },
+          {
+            "name": ".select_poly",
+            "domain": "FACE",
+            "data_type": "BOOLEAN"
+          },
+          {
+            "name": "sharp_face",
+            "domain": "FACE",
+            "data_type": "BOOLEAN"
+          },
+          {
+            "name": ".edge_verts",
+            "domain": "EDGE",
+            "data_type": "INT32_2D"
+          },
+          {
+            "name": ".select_edge",
+            "domain": "EDGE",
+            "data_type": "BOOLEAN"
+          }
+        ],
+        "custom_normals": false,
+        "shape_keys": [],
+        "uv_distortion": "not_tested",
+        "baking_artifacts": "not_tested"
+      },
+      "base": {
+        "status": "complete",
+        "fingerprint": "4adafc5dfe122e1a4924e3476a53e365b276417f9050e5a231e0a62d2f9068b8",
+        "vertices": 134,
+        "edges": 199,
+        "faces": 66,
+        "polygon_distribution": {
+          "4": 66
+        },
+        "edge_length_world": {
+          "min": 0.19634321331977844,
+          "max": 70.0,
+          "mean": 24.347397548244825
+        },
+        "face_area_world": {
+          "min": 13.744034767150879,
+          "max": 3010.000244140625,
+          "mean": 82.26703341801961
+        },
+        "planarity_deviation_world": {
+          "min": 0.0,
+          "max": 3.475695848464966e-06,
+          "mean": 1.1273148243851734e-06
+        },
+        "edge_ratio": {
+          "min": 1.627906976744186,
+          "max": 356.5185616372339,
+          "mean": 345.7857248214741
+        },
+        "dihedral_angle_radians": {
+          "min": 0.012271764688193798,
+          "max": 0.024559874087572098,
+          "mean": 0.024166097635259995
+        },
+        "sharp_edges": 0,
+        "normal_summary": {
+          "space": "world",
+          "face_length": {
+            "min": 0.9999999059364155,
+            "max": 1.0000000894069632,
+            "mean": 1.00000000532476
+          }
+        },
+        "boundary_edge_count": 134,
+        "radial_edge_count": 0,
+        "nonmanifold_vertex_count": 0,
+        "degenerate_face_count": 0,
+        "winding_edge_count": 0,
+        "loose_edge_count": 0,
+        "loose_vertex_count": 0,
+        "duplicate_pair_count": 0,
+        "duplicate_count_is_lower_bound": false,
+        "island_count": 1,
+        "shells": [
+          {
+            "vertices": 134,
+            "faces": 66,
+            "closed": false,
+            "signed_volume_world": null,
+            "orientation": "undetermined"
+          }
+        ],
+        "regions": [
+          {
+            "id": "boundary-0",
+            "edge_count": 134,
+            "edge_indices": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              7,
+              8,
+              10,
+              11,
+              13,
+              14,
+              16,
+              17,
+              19,
+              20,
+              22,
+              23,
+              25,
+              26,
+              28,
+              29,
+              31,
+              32,
+              34,
+              35,
+              37,
+              38,
+              40,
+              41,
+              43,
+              44,
+              46,
+              47,
+              49,
+              50,
+              52,
+              53,
+              55,
+              56,
+              58,
+              59,
+              61,
+              62,
+              64,
+              65,
+              67,
+              68,
+              70,
+              71,
+              73,
+              74,
+              76,
+              77,
+              79,
+              80,
+              82,
+              83,
+              85,
+              86,
+              88,
+              89,
+              91,
+              92,
+              94,
+              95,
+              97,
+              98,
+              100,
+              101,
+              103,
+              104,
+              106,
+              107,
+              109,
+              110,
+              112,
+              113,
+              115,
+              116,
+              118,
+              119,
+              121,
+              122,
+              124,
+              125,
+              127,
+              128,
+              130,
+              131,
+              133,
+              134,
+              136,
+              137,
+              139,
+              140,
+              142,
+              143,
+              145,
+              146,
+              148,
+              149,
+              151,
+              152,
+              154,
+              155,
+              157,
+              158,
+              160,
+              161,
+              163,
+              164,
+              166,
+              167,
+              169,
+              170,
+              172,
+              173,
+              175,
+              176,
+              178,
+              179,
+              181,
+              182,
+              184,
+              185,
+              187,
+              188,
+              190,
+              191,
+              193,
+              194,
+              196,
+              197,
+              198
+            ],
+            "indices_truncated": false,
+            "closed_loop": true,
+            "perimeter_world": 295.1321121007204,
+            "intent": "unknown",
+            "automatic_fill_allowed": false
+          }
+        ],
+        "closed_topology_candidate": false,
+        "findings": [
+          {
+            "type": "boundary_edges_intent_unknown",
+            "severity": "warning",
+            "confidence": 1.0,
+            "count": 134,
+            "indices": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              7,
+              8,
+              10,
+              11,
+              13,
+              14,
+              16,
+              17,
+              19,
+              20,
+              22,
+              23,
+              25,
+              26,
+              28,
+              29,
+              31,
+              32,
+              34,
+              35,
+              37,
+              38,
+              40,
+              41,
+              43,
+              44,
+              46,
+              47,
+              49,
+              50,
+              52,
+              53,
+              55,
+              56,
+              58,
+              59,
+              61,
+              62,
+              64,
+              65,
+              67,
+              68,
+              70,
+              71,
+              73,
+              74,
+              76,
+              77,
+              79,
+              80,
+              82,
+              83,
+              85,
+              86,
+              88,
+              89,
+              91,
+              92,
+              94,
+              95,
+              97,
+              98,
+              100,
+              101,
+              103,
+              104,
+              106,
+              107,
+              109,
+              110,
+              112,
+              113,
+              115,
+              116,
+              118,
+              119,
+              121,
+              122,
+              124,
+              125,
+              127,
+              128,
+              130,
+              131,
+              133,
+              134,
+              136,
+              137,
+              139,
+              140,
+              142,
+              143,
+              145,
+              146,
+              148,
+              149,
+              151,
+              152,
+              154,
+              155,
+              157,
+              158,
+              160,
+              161,
+              163,
+              164,
+              166,
+              167,
+              169,
+              170,
+              172,
+              173,
+              175,
+              176,
+              178,
+              179,
+              181,
+              182,
+              184,
+              185,
+              187,
+              188,
+              190,
+              191,
+              193,
+              194,
+              196,
+              197,
+              198
+            ],
+            "indices_truncated": false,
+            "safe_to_automate": false,
+            "complexity": "requires_context",
+            "images": [],
+            "interpretation": "measured_observation"
+          }
+        ],
+        "coverage": {
+          "self_intersections": "not_tested",
+          "containment": "not_tested",
+          "assembly_gaps": "not_tested",
+          "symmetry": "not_inferred",
+          "cylindrical_fit": "not_tested",
+          "manufacturing": "not_certified"
+        }
+      },
+      "evaluated": {
+        "status": "complete",
+        "fingerprint": "4adafc5dfe122e1a4924e3476a53e365b276417f9050e5a231e0a62d2f9068b8",
+        "vertices": 134,
+        "edges": 199,
+        "faces": 66,
+        "polygon_distribution": {
+          "4": 66
+        },
+        "edge_length_world": {
+          "min": 0.19634321331977844,
+          "max": 70.0,
+          "mean": 24.347397548244825
+        },
+        "face_area_world": {
+          "min": 13.744034767150879,
+          "max": 3010.000244140625,
+          "mean": 82.26703341801961
+        },
+        "planarity_deviation_world": {
+          "min": 0.0,
+          "max": 3.475695848464966e-06,
+          "mean": 1.1273148243851734e-06
+        },
+        "edge_ratio": {
+          "min": 1.627906976744186,
+          "max": 356.5185616372339,
+          "mean": 345.7857248214741
+        },
+        "dihedral_angle_radians": {
+          "min": 0.012271764688193798,
+          "max": 0.024559874087572098,
+          "mean": 0.024166097635259995
+        },
+        "sharp_edges": 0,
+        "normal_summary": {
+          "space": "world",
+          "face_length": {
+            "min": 0.9999999059364155,
+            "max": 1.0000000894069632,
+            "mean": 1.00000000532476
+          }
+        },
+        "boundary_edge_count": 134,
+        "radial_edge_count": 0,
+        "nonmanifold_vertex_count": 0,
+        "degenerate_face_count": 0,
+        "winding_edge_count": 0,
+        "loose_edge_count": 0,
+        "loose_vertex_count": 0,
+        "duplicate_pair_count": 0,
+        "duplicate_count_is_lower_bound": false,
+        "island_count": 1,
+        "shells": [
+          {
+            "vertices": 134,
+            "faces": 66,
+            "closed": false,
+            "signed_volume_world": null,
+            "orientation": "undetermined"
+          }
+        ],
+        "regions": [
+          {
+            "id": "boundary-0",
+            "edge_count": 134,
+            "edge_indices": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              7,
+              8,
+              10,
+              11,
+              13,
+              14,
+              16,
+              17,
+              19,
+              20,
+              22,
+              23,
+              25,
+              26,
+              28,
+              29,
+              31,
+              32,
+              34,
+              35,
+              37,
+              38,
+              40,
+              41,
+              43,
+              44,
+              46,
+              47,
+              49,
+              50,
+              52,
+              53,
+              55,
+              56,
+              58,
+              59,
+              61,
+              62,
+              64,
+              65,
+              67,
+              68,
+              70,
+              71,
+              73,
+              74,
+              76,
+              77,
+              79,
+              80,
+              82,
+              83,
+              85,
+              86,
+              88,
+              89,
+              91,
+              92,
+              94,
+              95,
+              97,
+              98,
+              100,
+              101,
+              103,
+              104,
+              106,
+              107,
+              109,
+              110,
+              112,
+              113,
+              115,
+              116,
+              118,
+              119,
+              121,
+              122,
+              124,
+              125,
+              127,
+              128,
+              130,
+              131,
+              133,
+              134,
+              136,
+              137,
+              139,
+              140,
+              142,
+              143,
+              145,
+              146,
+              148,
+              149,
+              151,
+              152,
+              154,
+              155,
+              157,
+              158,
+              160,
+              161,
+              163,
+              164,
+              166,
+              167,
+              169,
+              170,
+              172,
+              173,
+              175,
+              176,
+              178,
+              179,
+              181,
+              182,
+              184,
+              185,
+              187,
+              188,
+              190,
+              191,
+              193,
+              194,
+              196,
+              197,
+              198
+            ],
+            "indices_truncated": false,
+            "closed_loop": true,
+            "perimeter_world": 295.1321121007204,
+            "intent": "unknown",
+            "automatic_fill_allowed": false
+          }
+        ],
+        "closed_topology_candidate": false,
+        "findings": [
+          {
+            "type": "boundary_edges_intent_unknown",
+            "severity": "warning",
+            "confidence": 1.0,
+            "count": 134,
+            "indices": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              7,
+              8,
+              10,
+              11,
+              13,
+              14,
+              16,
+              17,
+              19,
+              20,
+              22,
+              23,
+              25,
+              26,
+              28,
+              29,
+              31,
+              32,
+              34,
+              35,
+              37,
+              38,
+              40,
+              41,
+              43,
+              44,
+              46,
+              47,
+              49,
+              50,
+              52,
+              53,
+              55,
+              56,
+              58,
+              59,
+              61,
+              62,
+              64,
+              65,
+              67,
+              68,
+              70,
+              71,
+              73,
+              74,
+              76,
+              77,
+              79,
+              80,
+              82,
+              83,
+              85,
+              86,
+              88,
+              89,
+              91,
+              92,
+              94,
+              95,
+              97,
+              98,
+              100,
+              101,
+              103,
+              104,
+              106,
+              107,
+              109,
+              110,
+              112,
+              113,
+              115,
+              116,
+              118,
+              119,
+              121,
+              122,
+              124,
+              125,
+              127,
+              128,
+              130,
+              131,
+              133,
+              134,
+              136,
+              137,
+              139,
+              140,
+              142,
+              143,
+              145,
+              146,
+              148,
+              149,
+              151,
+              152,
+              154,
+              155,
+              157,
+              158,
+              160,
+              161,
+              163,
+              164,
+              166,
+              167,
+              169,
+              170,
+              172,
+              173,
+              175,
+              176,
+              178,
+              179,
+              181,
+              182,
+              184,
+              185,
+              187,
+              188,
+              190,
+              191,
+              193,
+              194,
+              196,
+              197,
+              198
+            ],
+            "indices_truncated": false,
+            "safe_to_automate": false,
+            "complexity": "requires_context",
+            "images": [],
+            "interpretation": "measured_observation"
+          }
+        ],
+        "coverage": {
+          "self_intersections": "not_tested",
+          "containment": "not_tested",
+          "assembly_gaps": "not_tested",
+          "symmetry": "not_inferred",
+          "cylindrical_fit": "not_tested",
+          "manufacturing": "not_certified"
+        },
+        "index_mapping": "Independent domain; indices cannot target base mesh"
+      }
+    },
+    {
+      "id": "c8c294d2-2d94-46f7-8ef0-46d6d0cfd739",
+      "name": "WHITE LAB | Side bounce.001",
+      "type": "LIGHT",
+      "collections": [
+        "WHITE LAB | Ambiente.001"
+      ],
+      "world_matrix": [
+        [
+          -0.7974904775619507,
+          -0.46377483010292053,
+          0.3859039545059204,
+          1.6566920280456543
+        ],
+        [
+          0.6033315658569336,
+          -0.6130229234695435,
+          0.5100920796394348,
+          2.189833879470825
+        ],
+        [
+          9.826511870869581e-08,
+          0.6396216154098511,
+          0.7686899304389954,
+          3.299999952316284
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local_matrix": [
+        [
+          -0.7974904775619507,
+          -0.46377483010292053,
+          0.3859039545059204,
+          1.6566920280456543
+        ],
+        [
+          0.6033315658569336,
+          -0.6130229234695435,
+          0.5100920796394348,
+          2.189833879470825
+        ],
+        [
+          9.826511870869581e-08,
+          0.6396216154098511,
+          0.7686899304389954,
+          3.299999952316284
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_bounds": {
+        "min": [
+          1.6566920280456543,
+          2.189833879470825,
+          3.299999952316284
+        ],
+        "max": [
+          1.6566920280456543,
+          2.189833879470825,
+          3.299999952316284
+        ]
+      },
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_determinant": 1.0,
+      "visible": true,
+      "hide_render": false,
+      "editable": true,
+      "dependencies": {
+        "parent_id": null,
+        "children_ids": [],
+        "instance_type": "NONE",
+        "instance_collection": null,
+        "modifiers": [],
+        "constraints": [],
+        "drivers": [],
+        "library": null
+      }
+    }
+  ],
+  "errors": [],
+  "collections": {
+    "id": "8489beb2-118f-467a-82c0-c0a8ff7b28ec",
+    "name": "Scene Collection",
+    "objects": [
+      "e562cb57-9ce5-4625-8c13-ad2327ded4df"
+    ],
+    "children": [
+      {
+        "id": "68c55c6a-b879-4d42-ab10-402aea33cc95",
+        "name": "WHITE LAB | Ambiente.001",
+        "objects": [
+          "13016613-d170-4ab0-8bb1-6b1367d8f421",
+          "9adbecbd-e062-4400-9bcb-2fe2bbb48113",
+          "f2521861-86ee-4f49-a709-8f2d376abeb2",
+          "c8c294d2-2d94-46f7-8ef0-46d6d0cfd739"
+        ],
+        "children": []
+      },
+      {
+        "id": "31fe4671-8d64-4eec-937d-21a2863158a7",
+        "name": "Mesh Doctor | Demonstration Cases",
+        "objects": [
+          "381722ac-db89-45ed-9630-9dee8836d1c6",
+          "4666387a-7ade-4037-b1e5-ac9f8825a608",
+          "ac1b80dd-91e1-43cd-8d24-4dbf3aee1019"
+        ],
+        "children": []
+      }
+    ]
+  },
+  "coverage": {
+    "scope": "active_scene",
+    "other_scenes": "not_scanned",
+    "external_libraries": "metadata_only",
+    "instances": "source_metadata_and_depsgraph_inventory",
+    "geometry_mutated": false
+  },
+  "instances": [
+    {
+      "object_id": "13016613-d170-4ab0-8bb1-6b1367d8f421",
+      "is_instance": false,
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_id": null
+    },
+    {
+      "object_id": "9adbecbd-e062-4400-9bcb-2fe2bbb48113",
+      "is_instance": false,
+      "world_matrix": [
+        [
+          0.9410002827644348,
+          -0.33704689145088196,
+          0.030296690762043,
+          0.13536232709884644
+        ],
+        [
+          0.3384058177471161,
+          0.9372215867042542,
+          -0.08424504101276398,
+          -0.3764001131057739
+        ],
+        [
+          -1.8316588068501005e-07,
+          0.0895271822810173,
+          0.9959843754768372,
+          4.449999809265137
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_id": null
+    },
+    {
+      "object_id": "f2521861-86ee-4f49-a709-8f2d376abeb2",
+      "is_instance": false,
+      "world_matrix": [
+        [
+          0.987603485584259,
+          0.07304400950670242,
+          -0.13893841207027435,
+          -0.716577410697937
+        ],
+        [
+          -0.15696914494037628,
+          0.45957136154174805,
+          -0.8741595149040222,
+          -4.508493900299072
+        ],
+        [
+          1.0992406984655645e-09,
+          0.8851320147514343,
+          0.4653399586677551,
+          2.4000000953674316
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_id": null
+    },
+    {
+      "object_id": "c8c294d2-2d94-46f7-8ef0-46d6d0cfd739",
+      "is_instance": false,
+      "world_matrix": [
+        [
+          -0.7974904775619507,
+          -0.46377483010292053,
+          0.3859039545059204,
+          1.6566920280456543
+        ],
+        [
+          0.6033315658569336,
+          -0.6130229234695435,
+          0.5100920796394348,
+          2.189833879470825
+        ],
+        [
+          9.826511870869581e-08,
+          0.6396216154098511,
+          0.7686899304389954,
+          3.299999952316284
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_id": null
+    },
+    {
+      "object_id": "381722ac-db89-45ed-9630-9dee8836d1c6",
+      "is_instance": false,
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -1.7000000476837158
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_id": null
+    },
+    {
+      "object_id": "4666387a-7ade-4037-b1e5-ac9f8825a608",
+      "is_instance": false,
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_id": null
+    },
+    {
+      "object_id": "ac1b80dd-91e1-43cd-8d24-4dbf3aee1019",
+      "is_instance": false,
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          1.7000000476837158
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_id": null
+    },
+    {
+      "object_id": "e562cb57-9ce5-4625-8c13-ad2327ded4df",
+      "is_instance": false,
+      "world_matrix": [
+        [
+          0.9054778814315796,
+          -0.13156551122665405,
+          0.4034852683544159,
+          4.035584926605225
+        ],
+        [
+          0.42439350485801697,
+          0.2807057201862335,
+          -0.8608684539794922,
+          -8.610247611999512
+        ],
+        [
+          -3.2248792081190913e-08,
+          0.9507338404655457,
+          0.31000837683677673,
+          3.100647449493408
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parent_id": null
+    }
+  ],
+  "finished_at": "2026-10-28T20:11:17.306663+00:00",
+  "summary": {
+    "objects": 8,
+    "mesh_objects": 4,
+    "base_findings": 4,
+    "errors": 0,
+    "elapsed_seconds": 0.01567260001320392
+  }
+}

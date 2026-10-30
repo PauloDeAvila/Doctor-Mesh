@@ -1,0 +1,27 @@
+test_clean_manifold_untouched (__main__.Integration.test_clean_manifold_untouched) ... ok
+test_degenerate_polygon (__main__.Integration.test_degenerate_polygon) ... ok
+test_duplicates_and_loose_geometry (__main__.Integration.test_duplicates_and_loose_geometry) ... ok
+test_ids_stable_after_rename_in_session (__main__.Integration.test_ids_stable_after_rename_in_session) ... ok
+test_intentional_asymmetry_not_a_defect (__main__.Integration.test_intentional_asymmetry_not_a_defect) ... ok
+test_invalid_report_rejected (__main__.Integration.test_invalid_report_rejected) ... ok
+test_inverted_closed_shell (__main__.Integration.test_inverted_closed_shell) ... ok
+test_learning_filters_status_units_and_range (__main__.Integration.test_learning_filters_status_units_and_range) ... ok
+test_limits_are_partial_not_pass (__main__.Integration.test_limits_are_partial_not_pass) ... ok
+test_missing_face_is_not_automatically_defect_or_cap (__main__.Integration.test_missing_face_is_not_automatically_defect_or_cap) ... ok
+test_no_scene_render_mutation (__main__.Integration.test_no_scene_render_mutation) ... ok
+test_nonplanar_quad (__main__.Integration.test_nonplanar_quad) ... ok
+test_registration_and_preferences (__main__.Integration.test_registration_and_preferences) ... ok
+test_reversed_face (__main__.Integration.test_reversed_face) ... ok
+test_selection_and_cancel (__main__.Integration.test_selection_and_cancel) ... ok
+test_shared_mesh_material_uv_modifiers_hierarchy (__main__.Integration.test_shared_mesh_material_uv_modifiers_hierarchy) ... ok
+test_skill_policy_no_arbitrary_caps (__main__.Integration.test_skill_policy_no_arbitrary_caps) ... ok
+test_small_translated_volume_is_numerically_stable (__main__.Integration.test_small_translated_volume_is_numerically_stable) ... ok
+test_world_units_scaling (__main__.Integration.test_world_units_scaling) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.046s
+
+OK
+Blender 5.4.0 Alpha (hash b1d561a6c0d6 built 2026-10-19 02:48:31)
+
+Blender quit

@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "steps": [
+    "register",
+    "plan",
+    "preview",
+    "apply",
+    "rollback",
+    "unregister"
+  ],
+  "original_restored": true,
+  "native_panel_visual_review": "pending"
+}

@@ -1,0 +1,5 @@
+00:00.406  blend            | Read blend: "C:\Users\phsra\OneDrive\Documents\ChatGPT\blender\mecha_small_parts_v1\black_steel_lookdev\Mecha_Side_Red_Eyes_Laser.blend"
+{"scope": "saved part0/3 only, separate background process, no model saved", "objects": 15, "runs": [{"phase": "cold", "seconds": 2.38809930003481, "objects": 15, "mesh_objects": 15, "base_findings": 2, "errors": 0, "elapsed_seconds": 2.380087499972433, "geometry_analysis_runs": 15, "geometry_cache_hits": 15}, {"phase": "warm", "seconds": 0.2972247999859974, "objects": 15, "mesh_objects": 15, "base_findings": 2, "errors": 0, "elapsed_seconds": 0.2924856999889016, "geometry_analysis_runs": 0, "geometry_cache_hits": 30}], "speedup": 8.03465693356448}
+Blender 5.4.0 Alpha (hash b1d561a6c0d6 built 2026-10-19 02:48:31)
+
+Blender quit

@@ -1,0 +1,8 @@
+00:00.610  blend            | Read blend: "C:\Users\phsra\OneDrive\Documents\ChatGPT\blender\mecha_small_parts_v1\black_steel_lookdev\Mecha_Side_Red_Eyes_Laser.blend"
+0 11 prepared, audited and committed together
+3 4 prepared, audited and committed together
+HAND_REFRESH_PASS 8.222478799987584
+Blender 5.4.0 Alpha (hash b1d561a6c0d6 built 2026-10-19 02:48:31)
+
+Blender quit
+Error: Not freed memory blocks: 30, total unfreed memory 0.058640 MB

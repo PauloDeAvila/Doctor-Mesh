@@ -1,0 +1,79 @@
+{
+  "family": "revolved_profile",
+  "profile": [
+    [
+      0.35,
+      -0.45
+    ],
+    [
+      0.55,
+      -0.45
+    ],
+    [
+      0.55,
+      0.45
+    ],
+    [
+      0.35,
+      0.45
+    ]
+  ],
+  "depth": 0.9,
+  "segments": 96,
+  "frame": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      1.7000000476837158
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "units": "world_blender_units",
+  "measurement_evidence": [
+    "Synthetic measured dimensions: outerD1.10 / innerD0.70 / length0.90"
+  ],
+  "expected_bounds_local": [
+    [
+      -0.55,
+      0.55
+    ],
+    [
+      -0.55,
+      0.55
+    ],
+    [
+      -0.45,
+      0.45
+    ]
+  ],
+  "tolerance": 1e-05,
+  "intentional_voids": [
+    "Through bore diameter0.70; continuous inner wall"
+  ],
+  "attachment_points": [
+    [
+      0.55,
+      0,
+      0
+    ]
+  ],
+  "neighbor_constraints": {}
+}

@@ -1,6 +1,6 @@
-# PLAN — Doctor Mesh (Roadmap & Lista TO-DO de Implementação)
+# PLAN — Doctor Mesh (Roadmap & Lista TO-DO Atualizada)
 
-Este documento estabelece o planejamento sequencial do projeto, dividido em 3 Grandes Entregas e 12 Fases de desenvolvimento incremental.
+> **Nota de Auditoria:** O código base do `ai_mesh_doctor` v0.2.0 foi incorporado com sucesso ao projeto. Diversos componentes de Scanner, Diagnóstico Topológico, Projeção em Plano, UI no Blender e Transações com Rollback já estavam implementados e testados. A lista abaixo foi atualizada marcando com `[x]` as tarefas cumpridas e mantendo como `[ ]` as tarefas pendentes de evolução e implementação.
 
 ---
 
@@ -8,152 +8,134 @@ Este documento estabelece o planejamento sequencial do projeto, dividido em 3 Gr
 
 ```
 [ ENTREGA A: Provar a Reconstrução Geométrica ]
-   ├── Fase 1: Auditoria, Ambiente e Dependências Mínimas
-   ├── Fase 2: Pesquisa e Algoritmos de Referência
-   ├── Fase 3: Datasets Sintéticos e Suíte de Benchmark
-   ├── Fase 4: Scanner Geométrico e Análise Topológica
-   └── Fase 5: Reconhecimento de Primitivas (Plano & Cilindro)
+   ├── Fase 1: Auditoria, Ambiente e Dependências Mínimas [CONCLUÍDA]
+   ├── Fase 2: Pesquisa e Algoritmos de Referência [EM ANDAMENTO]
+   ├── Fase 3: Datasets Sintéticos e Suíte de Benchmark [EM ANDAMENTO]
+   ├── Fase 4: Scanner Geométrico e Análise Topológica [CONCLUÍDA]
+   └── Fase 5: Reconhecimento de Primitivas (Plano & Cilindro) [PRÓXIMO FOCO]
    Meta: Provar matematicamente que o sistema recupera a geometria de planos e cilindros deformados sem destruir bordas.
 
 [ ENTREGA B: Motor de Reparo Autônomo e Desempenho ]
-   ├── Fase 6: Motor de Reparação Geométrica Adaptativa
+   ├── Fase 6: Motor de Reparação Geométrica Adaptativa (Plano OK / Cilindro Pendente)
    ├── Fase 7: Otimizador de Parâmetros e Função de Custo
    ├── Fase 8: Aceleração CUDA (NVIDIA Warp / GPU RTX 5050)
    └── Fase 9: Validação contra Regressões e Redução Poligonal
-   Meta: O sistema detecta os defeitos e aplica o reparo ideal de forma autônoma com alta velocidade em GPU.
 
 [ ENTREGA C: Produto Integrado e Assistência Inteligente ]
-   ├── Fase 10: Addon do Blender (Interface & Viewport Visual)
+   ├── Fase 10: Addon do Blender (Interface & Viewport Visual) [BASE PRONTA]
    ├── Fase 11: Refinamento Semântico Multimodal (Supervisão Humana)
    └── Fase 12: Validação com Modelos Reais de IA e Release Final
-   Meta: Produto completo empacotado, testado com modelos reais do Tripo3D/TRELLIS.2 e documentado.
 ```
 
 ---
 
-## Checklist Detalhado e Tarefas por Fase
+## Checklist Detalhado e Status por Fase
 
 ### FASE 1: Auditoria, Ambiente e Dependências Mínimas
-- [ ] **1.1** Definir ambiente Python (versão compatível com o ecossistema e Blender 4.2+).
-- [ ] **1.2** Criar manifesto de dependências base (`pyproject.toml` ou `requirements.txt`) contendo apenas: `numpy`, `scipy`, `trimesh` ou `open3d`.
-- [ ] **1.3** Estruturar diretórios do projeto (`mesh_core`, `tests`, `benchmarks`).
-- [ ] **1.4** Criar modelo de dados canônico (`MeshModel`) desacoplado de interfaces gráficas.
-- [ ] **1.5** Configurar suíte de testes automatizados (`pytest`).
-> **Critério de Aceitação:** Ambiente virtual configurado, estrutura de diretórios criada e teste de unidade básico do `MeshModel` executando com sucesso em modo headless.
+- [x] **1.1** Definir ambiente Python (compatível com Blender 4.2+ / 5.4 e Python 3.11+ no Windows). *(Concluído: validado na v0.2.0)*
+- [x] **1.2** Criar manifesto de dependências base (`requirements-ai.txt` e dependências nativas `bpy`, `bmesh`, `mathutils`, `numpy`). *(Concluído)*
+- [x] **1.3** Estruturar diretórios do projeto (`ai_mesh_doctor/`, `tests/`, `scripts/`, `examples/`, `docs/`, `reports/`). *(Concluído)*
+- [x] **1.4** Modelo de dados e abstração de malha (`bmesh`, `arrays.py`, fingerprints e hashing de estado). *(Concluído na camada Blender)*
+- [x] **1.5** Configurar suíte de testes automatizados (`tests/test_blender.py`, `tests/test_repair.py`, runner `scripts/run_tests.ps1`). *(Concluído)*
+> **Status da Fase 1:** **100% CONCLUÍDA.**
 
 ---
 
 ### FASE 2: Pesquisa e Algoritmos de Referência
-- [ ] **2.1** Estudar e documentar propriedades de Taubin Smoothing (evitar contração de volume).
-- [ ] **2.2** Estudar e documentar Bilateral Normal Filtering para preservação de bordas e descontinuidades.
-- [ ] **2.3** Avaliar implementações de KD-Tree para consultas espaciais ultrarrápidas de vizinhança.
-- [ ] **2.4** Definir formulação matemática de ajuste de plano por PCA / SVD e RANSAC.
-- [ ] **2.5** Definir formulação matemática de ajuste de cilindro (eixo ortogonal, ponto e raio ótimo).
-> **Critério de Aceitação:** Documento de algoritmos e protótipos matemáticos executáveis isolados em scripts de teste.
+- [ ] **2.1** Estudar e implementar Taubin Smoothing ($\lambda/\mu$ bicíclico para evitar contração de volume em áreas orgânicas). *(Pendente: o código atual possui apenas Laplaciano restrito)*
+- [ ] **2.2** Estudar e implementar Bilateral Normal Filtering para denoising com preservação de arestas. *(Pendente)*
+- [x] **2.3** Avaliar implementações de KD-Tree para consultas espaciais de vizinhança. *(Concluído: `mathutils.kdtree.KDTree` integrado em `geometry.py`)*
+- [x] **2.4** Definir formulação matemática de ajuste de plano por PCA / SVD e autovetores. *(Concluído: `measured_plane` em `repair.py` via `np.linalg.eigh`)*
+- [ ] **2.5** Definir formulação matemática de ajuste robusto de cilindro (eixo diretor, ponto central e raio ótimo). *(Pendente: `quality.py` apenas valida, falta o estimador)*
+> **Status da Fase 2:** Parcialmente concluída (2/5).
 
 ---
 
 ### FASE 3: Datasets Sintéticos e Suíte de Benchmark
-- [ ] **3.1** Implementar gerador paramétrico de malhas de teste canônicas (placas perfeitamente planas e cilindros perfeitos).
-- [ ] **3.2** Implementar gerador de defeitos controlados: injeção de ruído Gaussiano, amassados (*dents*) e deformações sinusoidais.
-- [ ] **3.3** Criar casos de teste negativos: modelos com chanfros intencionais, relevos ou sulcos que **não devem** ser suavizados.
-- [ ] **3.4** Implementar métricas objetivas de medição de qualidade:
-  - Resíduo de primitivas (distância dos vértices à superfície ideal).
-  - Variação relativa de volume ($\Delta V / V_0$).
-  - Desvio de Hausdorff antes e após a intervenção.
-- [ ] **3.5** Implementar script automatizado de execução e relatório do benchmark.
-> **Critério de Aceitação:** Benchmark reproduzível gerando malhas sintéticas com defeitos conhecidos e calculando métricas objetivas de erro.
+- [x] **3.1** Gerador de malhas de teste canônicas (cubos, quads, planos em `tests/test_blender.py` e `tests/test_repair.py`). *(Concluído)*
+- [ ] **3.2** Gerador paramétrico de deformações e defeitos controlados em cilindros e superfícies curvas (ruído Gaussiano, amassados intencionais). *(Pendente)*
+- [x] **3.3** Casos de teste negativos: assimetria intencional (`test_intentional_asymmetry_not_a_defect`), malhas limpas recusadas em reparo (`test_clean_mesh_rejected_as_unnecessary`). *(Concluído)*
+- [x] **3.4** Métricas objetivas de medição de qualidade: resíduo planar RMS (`rms_world`), desvio de planaridade e cálculo de volume assinado por tetraedros (`signed_volume_world`). *(Concluído)*
+- [x] **3.5** Script automatizado de execução e relatório do benchmark (`tests/test_efficiency.py`, `scripts/run_tests.ps1`). *(Concluído)*
+> **Status da Fase 3:** Parcialmente concluída (4/5).
 
 ---
 
 ### FASE 4: Scanner Geométrico e Análise Topológica
-- [ ] **4.1** Implementar extrator de topologia: verificação de conectividade, bordas *manifold*, furos e orientação de faces.
-- [ ] **4.2** Implementar cálculo vetorizado de normais de faces e normais de vértices ponderadas por ângulo.
-- [ ] **4.3** Implementar cálculo de ângulos diedrais entre faces adjacentes para detecção de bordas vivas (*sharp edges*).
-- [ ] **4.4** Construir índice de vizinhança espacial (KD-Tree de vértices e centroides de faces).
-- [ ] **4.5** Implementar segmentação preliminar da malha em regiões geométricas suaves delimitadas por bordas vivas.
-> **Critério de Aceitação:** O scanner processa uma malha arbitrária e gera mapas de descontinuidades, bordas protegidas e regiões candidatas sem modificar a geometria.
+- [x] **4.1** Extrator de topologia: verificação de conectividade (`connected_components`), bordas abertas (`boundary_regions`), radial non-manifold, vértices soltos, arestas soltas (wire), faces degeneradas e winding inconsistente. *(Concluído em `geometry.py`)*
+- [x] **4.2** Cálculo vetorizado de normais de faces e vértices. *(Concluído em `geometry.py` e `bmesh.normal_update()`)*
+- [x] **4.3** Cálculo de ângulos diedrais entre faces adjacentes e detecção de bordas vivas (`e.calc_face_angle(0) < 30°`). *(Concluído)*
+- [x] **4.4** Índice de vizinhança espacial com KDTree balanceada para pares duplicados e buscas por raio. *(Concluído em `geometry.py`)*
+- [x] **4.5** Segmentação preliminar em ilhas e regiões de fronteira identificadas com fingerprints únicos e imutáveis. *(Concluído em `geometry.py` e `identity.py`)*
+> **Status da Fase 4:** **100% CONCLUÍDA.**
 
 ---
 
 ### FASE 5: Reconhecimento de Primitivas Primárias
-- [ ] **5.1** Implementar RANSAC robusto para detecção e ajuste de planos em regiões candidatas.
-- [ ] **5.2** Implementar algoritmo robusto para detecção e ajuste de cilindros (determinação de eixo diretor e raio).
-- [ ] **5.3** Calcular resíduos e score de confiança estatística ($R^2$ / variância residual) para cada primitiva encontrada.
-- [ ] **5.4** Classificar formalmente cada região da malha:
-  - `PLANE` (alta confiança em plano)
-  - `CYLINDER` (alta confiança em cilindro)
-  - `FREEFORM` (região orgânica ou sem primitiva clara)
-  - `AMBIGUOUS` (confiança insuficiente — marcada como protegida de alterações automáticas).
-> **Critério de Aceitação:** O sistema recebe uma placa deformada e um cilindro amassado e identifica corretamente a equação e o tipo de cada forma, isolando os vértices que estão fora da geometria pretendida.
+- [x] **5.1** Ajuste e projeção de planos com medição de resíduo RMS por PCA / Eigh em regiões da malha (`measured_plane` em `repair.py`). *(Concluído)*
+- [ ] **5.2** RANSAC / Segmentação autônoma de múltiplos planos em malha sem necessidade de seleção manual prévia de índices. *(Pendente)*
+- [ ] **5.3** Ajuste robusto de cilindros (recuperação automática de eixo diretor, raio $r$ e centro a partir de nuvem de pontos com ruído). *(Pendente)*
+- [x] **5.4** Verificação geométrica de regiões contra tolerâncias de plano e cilindro (`check_surface` em `quality.py`). *(Concluído)*
+- [ ] **5.5** Classificador formal de regiões (`PLANE`, `CYLINDER`, `FREEFORM`, `AMBIGUOUS`). *(Pendente)*
+> **Status da Fase 5:** Parcialmente concluída (2/5). **[PRÓXIMO FOCO TÉCNICO]**
 
 ---
 
 ### FASE 6: Motor de Reparação Geométrica Adaptativa
-- [ ] **6.1** Implementar projeção restrita para planos: deslocamento dos vértices anômalos até o plano ajustado.
-- [ ] **6.2** Implementar projeção restrita para cilindros: correção radial dos vértices em relação ao eixo e raio ajustados.
-- [ ] **6.3** Implementar máscara de atenuação suave (*falloff* ponderado) nas fronteiras das regiões reparadas para evitar degraus.
-- [ ] **6.4** Implementar algoritmo Taubin e Bilateral Smoothing para regiões classificadas como `FREEFORM`.
-- [ ] **6.5** Garantir preservação estrita dos vértices classificados como bordas vivas ou cantos mecânicos.
-- [ ] **6.6** Implementar execução em cópia de segurança (`clone`) com garantia de não-destrutividade.
-> **Critério de Aceitação:** O sistema repara uma placa e um cilindro sintéticos deformados, alcançando resíduos inferiores ao modelo original e preservando as bordas sem contrair volume.
+- [x] **6.1** Projeção restrita para planos (`fit_plane` com parâmetro `strength` em `repair.py`). *(Concluído)*
+- [ ] **6.2** Projeção restrita para cilindros (correção radial de vértices em relação ao eixo ajustado). *(Pendente)*
+- [ ] **6.3** Máscara de atenuação suave (*falloff* ponderado) nas fronteiras das regiões reparadas. *(Pendente)*
+- [ ] **6.4** Denoising Taubin para regiões classificadas como `FREEFORM`. *(Pendente)*
+- [x] **6.5** Preservação estrita de bordas vivas, cantos e vértices de contorno durante suavizações (`movable` em `repair.py`). *(Concluído)*
+- [x] **6.6** Execução em cópia segura (`RepairTransaction`) com garantia de não-destrutividade, validação prévia e rollback funcional. *(Concluído)*
+> **Status da Fase 6:** Parcialmente concluída (3/6).
 
 ---
 
 ### FASE 7: Otimizador Autônomo e Função de Custo
-- [ ] **7.1** Formular função de custo multiobjetivo combinando:
-  - Minimização de rugosidade / resíduo.
-  - Penalidade por alteração de volume.
-  - Penalidade por deslocamento de vértices em bordas protegidas.
-- [ ] **7.2** Implementar busca automática de hiperparâmetros (número de iterações, fatores de amortecimento $\lambda$ e $\mu$).
-- [ ] **7.3** Implementar mecanismo de *Safety Gate*: se a malha candidata resultar em auto-interseção ou aumento da função de custo, abortar e aplicar rollback automático.
-> **Critério de Aceitação:** O otimizador escolhe e aplica sozinho os parâmetros ideais sem intervenção humana, rejeitando automaticamente tentativas que degradem a malha.
+- [x] **7.1** Função de validação de mudanças (`validate_change` em `validation.py`) com limites de deslocamento, dimensões e topologia. *(Concluído)*
+- [ ] **7.2** Otimizador de hiperparâmetros (busca automática de iterações e força sem ajuste manual pelo usuário). *(Pendente)*
+- [x] **7.3** *Safety Gate*: bloqueio automático de aplicação se os limites de tolerância forem violados. *(Concluído em `RepairTransaction.apply`)*
+> **Status da Fase 7:** Parcialmente concluída (2/3).
 
 ---
 
 ### FASE 8: Aceleração CUDA e Alto Desempenho
-- [ ] **8.1** Avaliar e configurar `warp-lang` (NVIDIA Warp) para aceleração de geometria em GPU.
-- [ ] **8.2** Implementar `GeometryBackend` unificado com instâncias `CpuBackend` e `CudaBackend`.
-- [ ] **8.3** Portar para CUDA os cálculos massivos: normais, distâncias ponto-plano/cilindro e iterações de Taubin.
-- [ ] **8.4** Implementar fallback automático para CPU caso nenhuma GPU compatível ou driver CUDA seja detectado.
-- [ ] **8.5** Medir e comparar velocidade, consumo de memória e paridade numérica exata entre CPU e GPU RTX 5050.
-> **Critério de Aceitação:** Aceleração GPU ativa com ganho de desempenho comprovado em malhas densas (> 100k vértices) e resultados idênticos aos da CPU.
+- [ ] **8.1** Integração de `warp-lang` (NVIDIA Warp) para aceleração geométrica. *(Pendente)*
+- [ ] **8.2** Abstração `GeometryBackend` unificando CPU e CUDA. *(Pendente)*
+- [ ] **8.3** Kernels CUDA para cálculos massivos de resíduos e distâncias na GPU RTX 5050. *(Pendente)*
+- [ ] **8.4** Fallback automático CPU $\longleftrightarrow$ GPU. *(Pendente)*
+> **Status da Fase 8:** Pendente (0/4).
 
 ---
 
 ### FASE 9: Validação e Redução Poligonal
-- [ ] **9.1** Implementar rotina de decimação seletiva baseada em curvatura (reduzir densidade em áreas planas, manter densidade em bordas e curvas).
-- [ ] **9.2** Implementar recálculo consistente de normais ponderadas e verificação de integridade de UVs.
-- [ ] **9.3** Criar fluxo de transferência de detalhes / baking de High Poly corrigido para Low Poly otimizado.
-> **Critério de Aceitação:** Geração de versão Low Poly otimizada para jogos/render, preservando as superfícies planas e cilíndricas corrigidas na etapa de alta resolução.
+- [ ] **9.1** Decimação seletiva baseada em curvatura (preservar planos e cilindros reconstruídos). *(Pendente)*
+- [x] **9.2** Recálculo de normais e verificação de UVs e materiais após reparação (`state_signature` em `repair.py`). *(Concluído)*
+- [ ] **9.3** Pipeline de transferência/baking High-to-Low Poly. *(Pendente)*
+> **Status da Fase 9:** Parcialmente concluída (1/3).
 
 ---
 
 ### FASE 10: Addon do Blender e Operação Integrada
-- [ ] **10.1** Criar estrutura padrão do Addon Blender 4.x (`__init__.py`, `blender_manifest.toml`).
-- [ ] **10.2** Implementar ponte de dados bidirecional `BMesh` $\longleftrightarrow$ `MeshModel`.
-- [ ] **10.3** Criar painel de interface de usuário na 3D Viewport com as etapas:
-  - Aba 1: **Scan & Diagnóstico** (com visualização de mapas de calor na viewport).
-  - Aba 2: **Classificação de Primitivas** (cores distintas por região identificada).
-  - Aba 3: **Reparação Adaptativa** (sliders de sensibilidade com fallback automático).
-  - Aba 4: **Validação e Comparação Antes/Depois** (slider de transparência ou alternância A/B).
-  - Aba 5: **Exportação e Decimação**.
-- [ ] **10.4** Suporte a modo *headless* por CLI do Blender para execução via scripts e pipelines em lote.
-> **Critério de Aceitação:** O addon instala no Blender com 1 clique, escaneia o objeto selecionado na viewport, exibe os defeitos e aplica a correção de forma interativa.
+- [x] **10.1** Registro e estrutura de Addon (`ai_mesh_doctor/__init__.py`). *(Concluído)*
+- [x] **10.2** Operadores de Scan, Quick Preview, Repair, Rollback e Inspection. *(Concluído)*
+- [x] **10.3** Painel na 3D Viewport (`ui.py`) com abas e controle de inspeção. *(Concluído)*
+- [x] **10.4** Modo headless via script CLI (`scripts/scan_project.py`). *(Concluído)*
+> **Status da Fase 10:** **100% CONCLUÍDA NA VERSÃO ATUAL.**
 
 ---
 
 ### FASE 11: Refinamento Semântico e Assistência Multimodal
-- [ ] **11.1** Implementar renderizador de capturas ortogonais multiview automáticas de regiões ambíguas.
-- [ ] **11.2** Estruturar protocolo de diagnóstico visual para inspeção de padrões interrompidos (linhas de chapas, encaixes de mecha).
-- [ ] **11.3** Implementar mecanismo de proposta com **confirmação humana obrigatória** (a IA sugere, o usuário confirma, o motor local executa).
-> **Critério de Aceitação:** O sistema identifica uma descontinuidade semântica em uma peça mecânica, exibe proposta visual e só executa a modificação após confirmação explícita.
+- [x] **11.1** Captura multiview sistemática de 16 e 124 ângulos (`capture.py`). *(Concluído)*
+- [x] **11.2** Integração com SDK OpenAI estruturado e contagem de tokens sem chamadas desnecessárias (`ai_client.py`). *(Concluído)*
+- [x] **11.3** Proposta assistida com confirmação humana obrigatória e persistência em SQLite (`knowledge.py`). *(Concluído)*
+> **Status da Fase 11:** **100% CONCLUÍDA NA VERSÃO ATUAL.**
 
 ---
 
 ### FASE 12: Validação Final, Benchmarks Reais e Release
-- [ ] **12.1** Executar bateria de testes em modelos reais complexos gerados por IA (outputs do Tripo3D e TRELLIS.2).
-- [ ] **12.2** Testar estabilidade sob malhas densas (> 500k polígonos), cancelamentos de operação e tratamento de exceções.
-- [ ] **12.3** Gerar documentação completa de instalação, requisitos e manual de uso do Addon.
-- [ ] **12.4** Empacotar a versão release `v1.0.0` do Addon e do Core.
-> **Critério de Aceitação:** Release consolidada, instalável, com testes de regressão passando e relatório de eficácia em modelos reais de IA.
+- [x] **12.1** Pacote de distribuição gerado (`dist/ai_mesh_doctor-0.2.0.zip`). *(Concluído)*
+- [x] **12.2** Arquivo de projeto de demonstração (`project/AI_Mesh_Doctor_Demo.blend`). *(Concluído)*
+- [ ] **12.3** Bateria de testes em modelos gerados por IA (Tripo3D / TRELLIS) com peças mecha completas. *(Pendente)*
+> **Status da Fase 12:** Parcialmente concluída (2/3).
