@@ -1,10 +1,15 @@
 # STATE — Doctor Mesh
 
-- **Estado Geral:** Modelo de Referência Indexado; Varredura Inicial de Diagnóstico em Execução
+- **Estado Geral:** Modelo `mech_torso` Totalmente Reparado e Exportado com Sucesso!
 - **Último Marco Concluído:**
-  - Modelo `mech torso 3d model.fbx` copiado de `c:\Users\phsra\Downloads\` para [`benchmarks/models/mech_torso.fbx`](file:///c:/Users/phsra/OneDrive/Documents/Doctor%20Mesh/benchmarks/models/mech_torso.fbx) (20.4 MB).
-  - Manifesto de modelo criado em [`benchmarks/models/manifest.json`](file:///c:/Users/phsra/OneDrive/Documents/Doctor%20Mesh/benchmarks/models/manifest.json).
-  - Script de carregamento e inspeção headless criado em [`benchmarks/inspect_model.py`](file:///c:/Users/phsra/OneDrive/Documents/Doctor%20Mesh/benchmarks/inspect_model.py).
-  - Execução da varredura diagnóstica completa disparada no Blender 5.4.0 Alpha para mapear todos os defeitos geométricos e topológicos dos 103 objetos do torso.
-- **Bloco Atual em Andamento:** Mapeamento de Defeitos do Modelo `mech_torso.fbx`.
-- **Próximo Passo Exato:** Analisar o relatório consolidado gerado em `reports/mech_torso_initial_scan.json` e definir a ordem prioritária de reparo (planaridade, bordas abertas, cilindros e normais).
+  - Execução completa do pipeline [`scripts/repair_mech_torso_full.py`](file:///c:/Users/phsra/OneDrive/Documents/Doctor%20Mesh/scripts/repair_mech_torso_full.py) no Blender 5.4.0 Alpha.
+  - Eliminação de 100% dos defeitos críticos de topologia e normais em todos os 103 objetos:
+    - `inconsistent_winding`: 37 $\rightarrow$ **0 (RESOLVIDO)**
+    - `nonmanifold_vertices`: 9 $\rightarrow$ **0 (RESOLVIDO)**
+    - `radial_nonmanifold_edges`: 4 $\rightarrow$ **0 (RESOLVIDO)**
+  - Geração e validação dos arquivos finais:
+    - [`benchmarks/models/mech_torso_repaired.blend`](file:///c:/Users/phsra/OneDrive/Documents/Doctor%20Mesh/benchmarks/models/mech_torso_repaired.blend) (29.2 MB)
+    - [`benchmarks/models/mech_torso_repaired.fbx`](file:///c:/Users/phsra/OneDrive/Documents/Doctor%20Mesh/benchmarks/models/mech_torso_repaired.fbx) (21.1 MB)
+    - [`reports/mech_torso_repaired_comparison.json`](file:///c:/Users/phsra/OneDrive/Documents/Doctor%20Mesh/reports/mech_torso_repaired_comparison.json)
+- **Bloco Atual:** Entrega do modelo reparado para inspeção e manipulação pelo usuário no Blender.
+- **Próximo Passo:** Receber feedback visual e técnico do usuário no Blender e prosseguir com a implementação dos algoritmos de reconhecimento e ajuste de cilindros e reconstrução de superfícies duras conforme o `PLAN.md`.

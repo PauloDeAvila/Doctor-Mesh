@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-10-30T22:18:05Z",
+  "input_model": "C:\\Users\\phsra\\OneDrive\\Documents\\Doctor Mesh\\benchmarks\\models\\mech_torso.fbx",
+  "output_blend": "C:\\Users\\phsra\\OneDrive\\Documents\\Doctor Mesh\\benchmarks\\models\\mech_torso_repaired.blend",
+  "output_fbx": "C:\\Users\\phsra\\OneDrive\\Documents\\Doctor Mesh\\benchmarks\\models\\mech_torso_repaired.fbx",
+  "objects_count": 103,
+  "metrics": {
+    "before": {
+      "boundary_edges_intent_unknown": 37007,
+      "inconsistent_winding": 37,
+      "radial_nonmanifold_edges": 4,
+      "nonmanifold_vertices": 9
+    },
+    "after": {
+      "boundary_edges_intent_unknown": 37010,
+      "near_duplicate_vertices": 1
+    }
+  },
+  "timings": {
+    "pre_scan_s": 20.31,
+    "repair_s": 1.34,
+    "post_scan_s": 9.02
+  }
+}
