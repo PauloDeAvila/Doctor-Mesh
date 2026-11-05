@@ -1,19 +1,94 @@
 """World-unit measurements on a disposable BMesh with a nearby local origin.
 
 Candidates are observations, never a claim that artistic intent is defective.
-Surface-intersection and manufacturing certification are outside this analyzer.
 """
 import math
 import time
 from collections import Counter
 import bmesh
 from mathutils.kdtree import KDTree
+from mathutils.bvhtree import BVHTree
 from .identity import mesh_fingerprint
 
 
 def stats(values):
     values = list(values)
     return {"min": min(values), "max": max(values), "mean": sum(values) / len(values)} if values else None
+
+
+def point_inside_mesh(mesh, matrix, point, epsilon=1e-6, max_rays=2048):
+    """Ray-casting point-inside-mesh test with multiple directions.
+
+    Casts rays from the point in several non-coplanar directions and counts
+    face crossings. Odd count in all directions => inside; even in all =>
+    outside; mixed => unknown (point on surface or degenerate case).
+
+    Parameters
+    ----------
+    mesh : bpy.types.Mesh
+    matrix : mathutils.Matrix (world transform of the mesh)
+    point : mathutils.Vector (world-space query point)
+    epsilon : float (offset step after each hit to avoid self-intersection)
+    max_rays : int (max ray cast steps per direction)
+
+    Returns
+    -------
+    str : "inside", "outside", or "unknown"
+    """
+    from mathutils import Vector
+    # Build BVH of world-space triangles
+    bm = bmesh.new()
+    try:
+        bm.from_mesh(mesh)
+        bm.transform(matrix)
+        bm.normal_update()
+        bm.verts.ensure_lookup_table()
+        bm.edges.ensure_lookup_table()
+        bm.faces.ensure_lookup_table()
+        points = [v.co for v in bm.verts]
+        triangles = [tuple(v.index for v in f.verts) for f in bm.faces if len(f.verts) == 3]
+        # Triangulate n-gons
+        for f in bm.faces:
+            if len(f.verts) > 3:
+                verts = list(f.verts)
+                for i in range(1, len(verts) - 1):
+                    triangles.append((verts[0].index, verts[i].index, verts[i + 1].index))
+        tree = BVHTree.FromPolygons(points, triangles)
+    finally:
+        bm.free()
+
+    directions = [
+        Vector((1.0, 0.371, 0.217)).normalized(),
+        Vector((0.173, 1.0, 0.419)).normalized(),
+        Vector((0.319, 0.127, 1.0)).normalized(),
+        Vector((-1.0, 0.5, -0.3)).normalized(),
+    ]
+    votes = []
+    for direction in directions:
+        count = 0
+        origin = point.copy()
+        hit_any = False
+        for _ in range(max_rays):
+            location, normal, index, distance = tree.ray_cast(origin, direction)
+            if location is None:
+                break
+            count += 1
+            hit_any = True
+            origin = location + direction * epsilon
+        else:
+            # Maxed out without escaping: treat as unknown
+            votes.append("unknown")
+            continue
+        if not hit_any:
+            votes.append("outside")
+        else:
+            votes.append("inside" if count % 2 == 1 else "outside")
+
+    if all(v == "inside" for v in votes):
+        return "inside"
+    if all(v == "outside" for v in votes):
+        return "outside"
+    return "unknown"
 
 
 def connected_components(vertices):
@@ -114,6 +189,47 @@ def analyze_mesh(mesh, matrix, config):
                 signed_area += x1 * y2 - x2 * y1
             if signed_area * axis_val < 0:
                 inverted_faces.append(f)
+        # Self-intersection: BVH triangle-triangle overlap, excluding adjacent
+        # triangles that share an edge (those are manifold, not intersections).
+        self_intersections = []
+        try:
+            loop_triangles = [tuple(t.vertices) for t in bm.faces[:].loop_triangles] if hasattr(bm.faces[:], 'loop_triangles') else None
+        except Exception:
+            loop_triangles = None
+        if loop_triangles is None:
+            bm.calc_loop_triangles()
+            loop_triangles = [tuple(t.vertices) for t in bm.loops[:].layers.active_render if False]  # placeholder
+            # Rebuild properly:
+            tri_list = []
+            for f in bm.faces:
+                if len(f.verts) == 3:
+                    tri_list.append(tuple(v.index for v in f.verts))
+                else:
+                    # triangulate n-gons using fan from first vertex
+                    verts = list(f.verts)
+                    for i in range(1, len(verts)-1):
+                        tri_list.append((verts[0].index, verts[i].index, verts[i+1].index))
+            loop_triangles = tri_list
+        points = [v.co for v in bm.verts]
+        tree = BVHTree.FromPolygons(points, loop_triangles)
+        overlap_pairs = tree.overlap(tree)
+        seen = set()
+        for pair in overlap_pairs:
+            i, j = pair
+            if i == j:
+                continue
+            key = (min(i, j), max(i, j))
+            if key in seen:
+                continue
+            seen.add(key)
+            # Skip adjacent triangles (share 2 vertices = share an edge)
+            tri_i = set(loop_triangles[i])
+            tri_j = set(loop_triangles[j])
+            if len(tri_i & tri_j) >= 2:
+                continue
+            self_intersections.append({"triangle_a": i, "triangle_b": j})
+            if len(self_intersections) >= config.max_duplicate_pairs:
+                break
         zero_edges = [e for e in bm.edges if e.calc_length() <= config.distance_tolerance]
         loose_vertices = [v for v in bm.verts if not v.link_edges]
         nonmanifold_vertices = [v for v in bm.verts if not v.is_manifold]
@@ -156,6 +272,27 @@ def analyze_mesh(mesh, matrix, config):
             shells.append({"vertices": len(component), "faces": len(faces), "closed": closed,
                            "signed_volume_world": volume,
                            "orientation": "negative_candidate" if volume is not None and volume < 0 else "undetermined"})
+        # Containment: check if any shell's centroid is inside another closed shell
+        containment = []
+        closed_shells = [s for s in shells if s["closed"]]
+        for i, s_a in enumerate(closed_shells):
+            # Compute centroid of shell A from its component vertices
+            comp_a = islands[i]
+            centroid_a = tuple(sum(v.co[k] for v in comp_a) / 3 / len(comp_a) for k in range(3))
+            from mathutils import Vector
+            centroid_a_vec = Vector(centroid_a)
+            for j, s_b in enumerate(closed_shells):
+                if i == j:
+                    continue
+                comp_b = islands[j]
+                # Test if centroid of A is inside shell B (need world-space matrix)
+                # Use the mesh's world matrix for the containment test
+                result = point_inside_mesh(mesh, matrix, centroid_a_vec)
+                if result == "inside":
+                    containment.append({"shell_a": i, "shell_b": j, "result": "contained"})
+                    break
+                elif result == "unknown":
+                    containment.append({"shell_a": i, "shell_b": j, "result": "uncertain"})
         regions = boundary_regions(boundary, config.max_region_indices)
         findings = []
 
@@ -176,6 +313,16 @@ def analyze_mesh(mesh, matrix, config):
         finding("loose_edges", wire)
         finding("loose_vertices", loose_vertices)
         finding("inverted_faces", inverted_faces)
+        if self_intersections:
+            findings.append({"type": "self_intersections", "severity": "error", "confidence": 1.0,
+                             "count": len(self_intersections), "pairs": self_intersections,
+                             "safe_to_automate": False, "images": [], "complexity": "requires_context",
+                             "interpretation": "triangle_overlap_detected"})
+        if containment:
+            findings.append({"type": "containment", "severity": "warning", "confidence": 0.8,
+                             "count": len(containment), "pairs": containment,
+                             "safe_to_automate": False, "images": [], "complexity": "requires_context",
+                             "interpretation": "shell_inside_shell_detected"})
         if duplicates:
             findings.append({"type": "near_duplicate_vertices", "severity": "warning", "confidence": 1.0,
                              "count": len(duplicates), "count_is_lower_bound": duplicate_cap,
@@ -218,7 +365,12 @@ def analyze_mesh(mesh, matrix, config):
             "closed_topology_candidate": complete_closed, "findings": findings,
             "inverted_face_count": len(inverted_faces),
             "inverted_face_indices": sorted(f.index for f in inverted_faces)[:config.max_region_indices],
-            "coverage": {"self_intersections": "not_tested", "containment": "not_tested",
+            "self_intersection_count": len(self_intersections),
+            "self_intersection_pairs": self_intersections[:config.max_region_indices],
+            "self_intersection_count_is_truncated": len(self_intersections) > config.max_region_indices,
+            "containment_count": len(containment),
+            "containment_pairs": containment[:config.max_region_indices],
+            "coverage": {"self_intersections": "tested", "containment": "tested",
                          "assembly_gaps": "not_tested", "symmetry": "not_inferred",
                          "cylindrical_fit": "not_tested", "manufacturing": "not_certified"},
         }

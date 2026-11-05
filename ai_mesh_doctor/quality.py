@@ -261,6 +261,10 @@ def audit_mesh(mesh, matrix, constraints=(), policy=None, geometry_report=None):
             reasons.append('unexpected_shell_count')
         if any(not s['closed'] or (s['signed_volume_world'] or 0) <= 0 for s in geometry_report['shells']):
             reasons.append('nonpositive_or_open_shell')
+        if geometry_report.get('self_intersection_count', 0) > 0:
+            reasons.append('self_intersections')
+        if geometry_report.get('containment_count', 0) > 0:
+            reasons.append('containment_detected')
     surfaces = [check_surface(mesh,matrix,c) for c in constraints]
     if any(not s['accepted'] for s in surfaces):
         reasons.append('measured_surface_error')
