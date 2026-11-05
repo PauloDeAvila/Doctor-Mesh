@@ -212,6 +212,7 @@ class CanonicalMeshRegression(unittest.TestCase):
 
         def build(bm):
             bmesh.ops.create_cube(bm, size=1)
+            bm.verts.ensure_lookup_table()
             bm.verts[0].co = (float("nan"), 0, 0)
 
         mesh = make_bmesh_mesh("NaN", build)

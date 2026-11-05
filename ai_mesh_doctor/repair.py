@@ -105,36 +105,69 @@ def _operate(mesh, matrix, plan):
             boundary = [e for e in bm.edges if e.is_boundary]
             if not boundary:
                 raise ValueError("No boundary holes to fill")
-            # Group boundary edges into loops
+            # Group boundary edges into loops with ordered vertices
             remaining = set(boundary)
             loops = []
             while remaining:
                 start = remaining.pop()
-                loop = [start]
-                stack = [start]
-                while stack:
-                    edge = stack.pop()
-                    for vertex in edge.verts:
-                        for adj in vertex.link_edges:
-                            if adj in remaining and adj != start:
-                                remaining.remove(adj)
-                                loop.append(adj)
-                                stack.append(adj)
-                loops.append(loop)
-            # Create faces from each loop
-            for loop in loops:
-                # Get ordered vertices around the loop
-                verts = []
-                for edge in loop:
-                    for v in edge.verts:
-                        if v not in verts:
-                            verts.append(v)
-                if len(verts) >= 3:
+                loop_edges = [start]
+                # Walk the loop: from each edge, find the next edge sharing a vertex
+                current_edge = start
+                while True:
+                    found_next = False
+                    for v in current_edge.verts:
+                        for adj in v.link_edges:
+                            if adj in remaining and adj != current_edge:
+                                # Check if this edge continues the loop (shares exactly one vertex)
+                                shared = set(current_edge.verts) & set(adj.verts)
+                                if len(shared) == 1:
+                                    remaining.remove(adj)
+                                    loop_edges.append(adj)
+                                    current_edge = adj
+                                    found_next = True
+                                    break
+                        if found_next:
+                            break
+                    if not found_next:
+                        break
+                    if current_edge == start:
+                        break
+                loops.append(loop_edges)
+            # Create faces from each ordered loop
+            for loop_edges in loops:
+                # Build ordered vertex list by walking the loop
+                if len(loop_edges) < 3:
+                    continue
+                # Start with first edge's vertices
+                first_edge = loop_edges[0]
+                v_start, v_next = first_edge.verts
+                ordered_verts = [v_start, v_next]
+                # Walk remaining edges to build ordered vertex list
+                used_edges = {first_edge}
+                current_v = v_next
+                while len(ordered_verts) < len(loop_edges) + 1:
+                    found = False
+                    for e in loop_edges:
+                        if e in used_edges:
+                            continue
+                        if current_v in e.verts:
+                            other = e.other_vert(current_v)
+                            if other not in ordered_verts or other == v_start:
+                                ordered_verts.append(other)
+                                used_edges.add(e)
+                                current_v = other
+                                found = True
+                                break
+                    if not found:
+                        break
+                # Remove duplicate closing vertex if present
+                if len(ordered_verts) > 1 and ordered_verts[0] == ordered_verts[-1]:
+                    ordered_verts = ordered_verts[:-1]
+                if len(ordered_verts) >= 3:
                     try:
-                        bmesh.ops.contextual_create(bm, geom=verts)
+                        bm.faces.new(ordered_verts)
                     except Exception:
-                        # Fallback: create face directly from ordered vertices
-                        bm.faces.new(verts)
+                        pass
         elif operation == "fix_nonmanifold":
             bm.edges.ensure_lookup_table()
             bm.faces.ensure_lookup_table()
@@ -165,27 +198,16 @@ def _operate(mesh, matrix, plan):
             bmesh.ops.delete(bm, geom=degenerate, context="FACES")
         elif operation == "fix_inverted_normals":
             bm.faces.ensure_lookup_table()
-            # Detect faces whose winding opposes their normal
             inverted = []
             for f in bm.faces:
-                normal = f.normal
-                ax, ay, az = abs(normal.x), abs(normal.y), abs(normal.z)
-                if ax >= ay and ax >= az:
-                    pts = [(v.co.y, v.co.z) for v in f.verts]
-                    axis_val = normal.x
-                elif ay >= az:
-                    pts = [(v.co.x, v.co.z) for v in f.verts]
-                    axis_val = normal.y
-                else:
-                    pts = [(v.co.x, v.co.y) for v in f.verts]
-                    axis_val = normal.z
-                signed_area = 0.0
-                n = len(pts)
-                for i in range(n):
-                    x1, y1 = pts[i]
-                    x2, y2 = pts[(i + 1) % n]
-                    signed_area += x1 * y2 - x2 * y1
-                if signed_area * axis_val < 0:
+                if len(f.verts) < 3:
+                    continue
+                v0, v1, v2 = f.verts[0].co, f.verts[1].co, f.verts[2].co
+                computed = (v1 - v0).cross(v2 - v0)
+                if computed.length < 1e-12:
+                    continue
+                computed.normalize()
+                if computed.dot(f.normal) < 0:
                     inverted.append(f)
             if not inverted:
                 raise ValueError("No inverted faces to fix")

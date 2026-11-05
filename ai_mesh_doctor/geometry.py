@@ -162,56 +162,34 @@ def analyze_mesh(mesh, matrix, config):
         winding = [e for e in bm.edges if e.is_manifold and not e.is_contiguous]
         degenerate = [f for f in bm.faces if f.calc_area() <= config.area_tolerance]
         # Inverted faces: winding order implies a normal opposing bm.faces.normal.
-        # Project each face onto the plane perpendicular to the dominant axis of its
-        # normal, compute the signed area from the 2D vertex order (shoelace), and
-        # compare the implied normal direction with face.normal. A negative dot
-        # product (signed_area * normal[dominant_axis] < 0) means the winding
-        # opposes the stored normal by more than 90 degrees, so the face is
-        # considered inverted.
+        # Use cross product of first two edges vs stored face normal.
+        # If computed normal opposes stored normal (dot < 0), face is inverted.
         inverted_faces = []
         for f in bm.faces:
-            normal = f.normal
-            ax, ay, az = abs(normal.x), abs(normal.y), abs(normal.z)
-            if ax >= ay and ax >= az:
-                pts = [(v.co.y, v.co.z) for v in f.verts]
-                axis_val = normal.x
-            elif ay >= az:
-                pts = [(v.co.x, v.co.z) for v in f.verts]
-                axis_val = normal.y
-            else:
-                pts = [(v.co.x, v.co.y) for v in f.verts]
-                axis_val = normal.z
-            signed_area = 0.0
-            n = len(pts)
-            for i in range(n):
-                x1, y1 = pts[i]
-                x2, y2 = pts[(i + 1) % n]
-                signed_area += x1 * y2 - x2 * y1
-            if signed_area * axis_val < 0:
+            if len(f.verts) < 3:
+                continue
+            v0, v1, v2 = f.verts[0].co, f.verts[1].co, f.verts[2].co
+            computed = (v1 - v0).cross(v2 - v0)
+            if computed.length < 1e-12:
+                continue
+            computed.normalize()
+            if computed.dot(f.normal) < 0:
                 inverted_faces.append(f)
         # Self-intersection: BVH triangle-triangle overlap, excluding adjacent
         # triangles that share an edge (those are manifold, not intersections).
         self_intersections = []
-        try:
-            loop_triangles = [tuple(t.vertices) for t in bm.faces[:].loop_triangles] if hasattr(bm.faces[:], 'loop_triangles') else None
-        except Exception:
-            loop_triangles = None
-        if loop_triangles is None:
-            bm.calc_loop_triangles()
-            loop_triangles = [tuple(t.vertices) for t in bm.loops[:].layers.active_render if False]  # placeholder
-            # Rebuild properly:
-            tri_list = []
-            for f in bm.faces:
-                if len(f.verts) == 3:
-                    tri_list.append(tuple(v.index for v in f.verts))
-                else:
-                    # triangulate n-gons using fan from first vertex
-                    verts = list(f.verts)
-                    for i in range(1, len(verts)-1):
-                        tri_list.append((verts[0].index, verts[i].index, verts[i+1].index))
-            loop_triangles = tri_list
+        bm.calc_loop_triangles()
+        tri_list = []
+        for f in bm.faces:
+            if len(f.verts) == 3:
+                tri_list.append(tuple(v.index for v in f.verts))
+            else:
+                # triangulate n-gons using fan from first vertex
+                verts = list(f.verts)
+                for i in range(1, len(verts) - 1):
+                    tri_list.append((verts[0].index, verts[i].index, verts[i + 1].index))
         points = [v.co for v in bm.verts]
-        tree = BVHTree.FromPolygons(points, loop_triangles)
+        tree = BVHTree.FromPolygons(points, tri_list)
         overlap_pairs = tree.overlap(tree)
         seen = set()
         for pair in overlap_pairs:
@@ -223,8 +201,8 @@ def analyze_mesh(mesh, matrix, config):
                 continue
             seen.add(key)
             # Skip adjacent triangles (share 2 vertices = share an edge)
-            tri_i = set(loop_triangles[i])
-            tri_j = set(loop_triangles[j])
+            tri_i = set(tri_list[i])
+            tri_j = set(tri_list[j])
             if len(tri_i & tri_j) >= 2:
                 continue
             self_intersections.append({"triangle_a": i, "triangle_b": j})

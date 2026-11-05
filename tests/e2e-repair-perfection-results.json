@@ -1,0 +1,23 @@
+{
+  "before": {
+    "perfect": false,
+    "score": 0.6,
+    "reasons": [
+      "inconsistent_winding",
+      "boundary_edges_open",
+      "topology_not_closed"
+    ],
+    "boundary_edge_count": 3,
+    "closed_topology_candidate": false
+  },
+  "after": {
+    "perfect": false,
+    "score": 0.7,
+    "reasons": [
+      "inconsistent_winding",
+      "topology_not_closed"
+    ],
+    "boundary_edge_count": 0,
+    "closed_topology_candidate": false
+  }
+}
