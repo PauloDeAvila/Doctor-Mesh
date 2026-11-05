@@ -9,6 +9,7 @@ from .config import InspectionConfig
 from .geometry import analyze_mesh
 from .identity import mesh_fingerprint
 from .construction_math import through_cut_interval, segments_for_sagitta
+from .quality_metrics import element_quality_metrics, detect_inverted_faces
 
 
 @dataclass(frozen=True)
@@ -44,119 +45,6 @@ def _vector(value, name):
     if len(value) != 3 or not all(math.isfinite(x) for x in value):
         raise ValueError(f'Finite XYZ {name} required')
     return Vector(value)
-
-
-def element_quality_metrics(points, triangles, normals):
-    """Per-triangle element quality metrics.
-
-    Parameters
-    ----------
-    points : sequence of mathutils.Vector
-        Vertex coordinates.
-    triangles : sequence of 3-tuples of int
-        Triangle vertex indices.
-    normals : sequence of mathutils.Vector
-        Face normals (kept for interface consistency; not used by the metrics).
-
-    Returns
-    -------
-    dict
-        ``aspect_ratio`` : max edge / min edge per triangle.
-        ``skewness`` : max(|angle - 60 deg|) over the three angles per triangle.
-        ``jacobian`` : 2 * area / (edge1_length * edge2_length) per triangle.
-        ``internal_angles`` : list of 3 angles in degrees per triangle.
-    """
-    aspect_ratios = []
-    skewnesses = []
-    jacobians = []
-    internal_angles_list = []
-
-    def angle(u, v):
-        lu = u.length
-        lv = v.length
-        if lu <= 0 or lv <= 0:
-            return 0.0
-        dot = max(-1.0, min(1.0, u.dot(v) / (lu * lv)))
-        return math.degrees(math.acos(dot))
-
-    for triangle in triangles:
-        a, b, c = (points[i] for i in triangle)
-        e1 = b - a
-        e2 = c - a
-        e3 = c - b
-        l1 = e1.length
-        l2 = e2.length
-        l3 = e3.length
-        min_edge = min(l1, l2, l3)
-        max_edge = max(l1, l2, l3)
-        aspect_ratio = (max_edge / min_edge) if min_edge > 0 else float('inf')
-
-        ang_a = angle(b - a, c - a)
-        ang_b = angle(a - b, c - b)
-        ang_c = angle(a - c, b - c)
-        angles = [ang_a, ang_b, ang_c]
-        skewness = max(abs(ang - 60.0) for ang in angles)
-
-        area = e1.cross(e2).length / 2.0
-        jacobian = (2.0 * area) / (l1 * l2) if (l1 > 0 and l2 > 0) else 0.0
-
-        aspect_ratios.append(aspect_ratio)
-        skewnesses.append(skewness)
-        jacobians.append(jacobian)
-        internal_angles_list.append(angles)
-
-    return {
-        'aspect_ratio': aspect_ratios,
-        'skewness': skewnesses,
-        'jacobian': jacobians,
-        'internal_angles': internal_angles_list,
-    }
-
-
-def detect_inverted_faces(points, triangles, normals):
-    """Indices of faces whose winding opposes their normal.
-
-    A face is considered inverted when the normal computed from the vertex
-    order opposes the stored face normal (dot < 0), or when the signed 2D
-    area of the triangle projected onto the plane perpendicular to its normal
-    is negative.
-
-    Parameters
-    ----------
-    points : sequence of mathutils.Vector
-        Vertex coordinates.
-    triangles : sequence of 3-tuples of int
-        Triangle vertex indices.
-    normals : sequence of mathutils.Vector
-        Face normals.
-
-    Returns
-    -------
-    list of int
-        Indices of inverted faces.
-    """
-    inverted = []
-    for i, triangle in enumerate(triangles):
-        a, b, c = (points[j] for j in triangle)
-        computed = (b - a).cross(c - a)
-        if computed.length < 1e-12:
-            continue
-        computed.normalize()
-        normal = normals[i]
-        if computed.dot(normal) < 0:
-            inverted.append(i)
-            continue
-        # Signed 2D area of the triangle projected onto the plane
-        # perpendicular to the normal (drop the dominant axis).
-        comps = [abs(normal.x), abs(normal.y), abs(normal.z)]
-        drop = comps.index(max(comps))
-        keep = [j for j in range(3) if j != drop]
-        p = [(points[j][keep[0]], points[j][keep[1]]) for j in triangle]
-        (x1, y1), (x2, y2), (x3, y3) = p
-        signed_area = 0.5 * ((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1))
-        if signed_area < 0:
-            inverted.append(i)
-    return inverted
 
 
 def check_surface(mesh, matrix, constraint):
@@ -338,6 +226,9 @@ def audit_mesh(mesh, matrix, constraints=(), policy=None, geometry_report=None):
             'elapsed_seconds': time.monotonic()-started, 'visual_approval': 'pending',
             'coverage': {'general_self_intersections': 'not_tested', 'wall_thickness': 'not_tested',
                          'assembly': 'separate_interface_check_required', 'manufacturing': 'not_certified'}}
+
+
+from .quality_metrics import validate_perfect_mesh
 
 
 def audit_component(obj, constraints=(), policy=None):
