@@ -3,12 +3,12 @@ import json
 import unittest
 from types import SimpleNamespace
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from ai_mesh_doctor.ai_client import DiagnosticClient, AIConfig, validate_diagnosis
 from ai_mesh_doctor.planning import deterministic_plan, validate_plan
 from ai_mesh_doctor.reporting import atomic_json
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 REPORT = json.loads((ROOT/"examples/inspection.json").read_text(encoding="utf-8"))
 TARGET = REPORT["objects"][0]
 

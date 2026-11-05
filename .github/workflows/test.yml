@@ -1,0 +1,71 @@
+name: Doctor Mesh Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        blender: ["5.4", "4.2"]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Python dependencies
+        run: |
+          pip install pytest pytest-cov hypothesis
+
+      - name: Download Blender
+        shell: pwsh
+        run: |
+          $url = "https://download.blender.org/release/Blender${{ matrix.blender }}/blender-${{ matrix.blender }}-windows-x64.msi"
+          $out = "$env:TEMP\blender.msi"
+          Invoke-WebRequest -Uri $url -OutFile $out
+          Start-Process msiexec.exe -ArgumentList "/i", $out, "/quiet", "/norestart" -Wait
+          if (Test-Path "C:\Program Files\Blender Foundation\Blender ${{ matrix.blender }}\blender.exe") {
+            echo "BLENDER_PATH=C:\Program Files\Blender Foundation\Blender ${{ matrix.blender }}\blender.exe" >> $env:GITHUB_ENV
+          } elseif (Test-Path "C:\Program Files\Blender Foundation\Blender ${{ matrix.blender }}\blender.exe") {
+            echo "BLENDER_PATH=C:\Program Files\Blender Foundation\Blender ${{ matrix.blender }}\blender.exe" >> $env:GITHUB_ENV
+          }
+
+      - name: Run unit tests (no Blender required)
+        shell: pwsh
+        run: |
+          python -m unittest discover -s tests/unit
+
+      - name: Run Blender regression tests
+        shell: pwsh
+        run: |
+          & $env:BLENDER_PATH --background --factory-startup --python-exit-code 1 --python tests/regression/test_canonical_meshes.py
+
+      - name: Run Blender test suites
+        shell: pwsh
+        run: |
+          & $env:BLENDER_PATH --background --factory-startup --python-exit-code 1 --python tests/test_repair.py
+          & $env:BLENDER_PATH --background --factory-startup --python-exit-code 1 --python tests/test_reconstruction.py
+          & $env:BLENDER_PATH --background --factory-startup --python-exit-code 1 --python tests/test_efficiency.py
+          & $env:BLENDER_PATH --background --factory-startup --python-exit-code 1 --python tests/test_capture.py
+          & $env:BLENDER_PATH --background --factory-startup --python-exit-code 1 --python tests/test_ui.py
+
+      - name: Upload test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-blender-${{ matrix.blender }}
+          path: |
+            tests/*.log
+            tests/*.json
+            regression-test-results.json
+          retention-days: 7

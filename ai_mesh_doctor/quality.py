@@ -17,6 +17,11 @@ class QualityPolicy:
     max_triangles: int = 100_000
     max_seconds: float = 20.0
     expected_shells: int = 1
+    max_aspect_ratio: float | None = None
+    min_jacobian: float | None = None
+    max_skewness: float | None = None
+    min_internal_angle_deg: float | None = None
+    max_internal_angle_deg: float | None = None
 
     def __post_init__(self):
         if (not math.isfinite(self.coincidence_tolerance) or self.coincidence_tolerance <= 0
@@ -24,12 +29,134 @@ class QualityPolicy:
                 or type(self.max_triangles) is not int or self.max_triangles < 1
                 or type(self.expected_shells) is not int or self.expected_shells < 1):
             raise ValueError('Invalid quality policy')
+        for field in ('max_aspect_ratio', 'min_jacobian', 'max_skewness',
+                      'min_internal_angle_deg', 'max_internal_angle_deg'):
+            value = getattr(self, field)
+            if value is not None and (not math.isfinite(value) or value <= 0):
+                raise ValueError('Invalid quality policy')
+        if (self.min_internal_angle_deg is not None
+                and self.max_internal_angle_deg is not None
+                and self.min_internal_angle_deg >= self.max_internal_angle_deg):
+            raise ValueError('Invalid quality policy')
 
 
 def _vector(value, name):
     if len(value) != 3 or not all(math.isfinite(x) for x in value):
         raise ValueError(f'Finite XYZ {name} required')
     return Vector(value)
+
+
+def element_quality_metrics(points, triangles, normals):
+    """Per-triangle element quality metrics.
+
+    Parameters
+    ----------
+    points : sequence of mathutils.Vector
+        Vertex coordinates.
+    triangles : sequence of 3-tuples of int
+        Triangle vertex indices.
+    normals : sequence of mathutils.Vector
+        Face normals (kept for interface consistency; not used by the metrics).
+
+    Returns
+    -------
+    dict
+        ``aspect_ratio`` : max edge / min edge per triangle.
+        ``skewness`` : max(|angle - 60 deg|) over the three angles per triangle.
+        ``jacobian`` : 2 * area / (edge1_length * edge2_length) per triangle.
+        ``internal_angles`` : list of 3 angles in degrees per triangle.
+    """
+    aspect_ratios = []
+    skewnesses = []
+    jacobians = []
+    internal_angles_list = []
+
+    def angle(u, v):
+        lu = u.length
+        lv = v.length
+        if lu <= 0 or lv <= 0:
+            return 0.0
+        dot = max(-1.0, min(1.0, u.dot(v) / (lu * lv)))
+        return math.degrees(math.acos(dot))
+
+    for triangle in triangles:
+        a, b, c = (points[i] for i in triangle)
+        e1 = b - a
+        e2 = c - a
+        e3 = c - b
+        l1 = e1.length
+        l2 = e2.length
+        l3 = e3.length
+        min_edge = min(l1, l2, l3)
+        max_edge = max(l1, l2, l3)
+        aspect_ratio = (max_edge / min_edge) if min_edge > 0 else float('inf')
+
+        ang_a = angle(b - a, c - a)
+        ang_b = angle(a - b, c - b)
+        ang_c = angle(a - c, b - c)
+        angles = [ang_a, ang_b, ang_c]
+        skewness = max(abs(ang - 60.0) for ang in angles)
+
+        area = e1.cross(e2).length / 2.0
+        jacobian = (2.0 * area) / (l1 * l2) if (l1 > 0 and l2 > 0) else 0.0
+
+        aspect_ratios.append(aspect_ratio)
+        skewnesses.append(skewness)
+        jacobians.append(jacobian)
+        internal_angles_list.append(angles)
+
+    return {
+        'aspect_ratio': aspect_ratios,
+        'skewness': skewnesses,
+        'jacobian': jacobians,
+        'internal_angles': internal_angles_list,
+    }
+
+
+def detect_inverted_faces(points, triangles, normals):
+    """Indices of faces whose winding opposes their normal.
+
+    A face is considered inverted when the normal computed from the vertex
+    order opposes the stored face normal (dot < 0), or when the signed 2D
+    area of the triangle projected onto the plane perpendicular to its normal
+    is negative.
+
+    Parameters
+    ----------
+    points : sequence of mathutils.Vector
+        Vertex coordinates.
+    triangles : sequence of 3-tuples of int
+        Triangle vertex indices.
+    normals : sequence of mathutils.Vector
+        Face normals.
+
+    Returns
+    -------
+    list of int
+        Indices of inverted faces.
+    """
+    inverted = []
+    for i, triangle in enumerate(triangles):
+        a, b, c = (points[j] for j in triangle)
+        computed = (b - a).cross(c - a)
+        if computed.length < 1e-12:
+            continue
+        computed.normalize()
+        normal = normals[i]
+        if computed.dot(normal) < 0:
+            inverted.append(i)
+            continue
+        # Signed 2D area of the triangle projected onto the plane
+        # perpendicular to the normal (drop the dominant axis).
+        comps = [abs(normal.x), abs(normal.y), abs(normal.z)]
+        drop = comps.index(max(comps))
+        keep = [j for j in range(3) if j != drop]
+        p = [(points[j][keep[0]], points[j][keep[1]]) for j in triangle]
+        (x1, y1), (x2, y2), (x3, y3) = p
+        signed_area = 0.5 * ((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1))
+        if signed_area < 0:
+            inverted.append(i)
+    return inverted
 
 
 def check_surface(mesh, matrix, constraint):
@@ -147,9 +274,63 @@ def audit_mesh(mesh, matrix, constraints=(), policy=None, geometry_report=None):
             coincidence = _coincident(data,data,policy,started,same_mesh=True)
         if coincidence['status'] != 'complete':
             reasons.append('coincident_faces_or_incomplete_check')
+
+    # Per-element quality threshold enforcement (only when a threshold is set).
+    element_defects = {}
+    thresholds_set = any(getattr(policy, field) is not None for field in (
+        'max_aspect_ratio', 'min_jacobian', 'max_skewness',
+        'min_internal_angle_deg', 'max_internal_angle_deg'))
+    if thresholds_set:
+        mesh.calc_loop_triangles()
+        if len(mesh.loop_triangles) <= policy.max_triangles:
+            points, triangles, normals, _ = _triangles(mesh, matrix)
+            metrics = element_quality_metrics(points, triangles, normals)
+            inverted = detect_inverted_faces(points, triangles, normals)
+            if inverted:
+                reasons.append('inverted_faces')
+                element_defects['inverted_face_indices'] = inverted
+
+            max_aspect_ratio = policy.max_aspect_ratio
+            if max_aspect_ratio is not None:
+                bad = [i for i, value in enumerate(metrics['aspect_ratio'])
+                       if value > max_aspect_ratio]
+                if bad:
+                    reasons.append('element_aspect_ratio_exceeded')
+                    element_defects['aspect_ratio_violation_indices'] = bad
+
+            min_jacobian = policy.min_jacobian
+            if min_jacobian is not None:
+                bad = [i for i, value in enumerate(metrics['jacobian'])
+                       if value < min_jacobian]
+                if bad:
+                    reasons.append('element_jacobian_below_min')
+                    element_defects['jacobian_violation_indices'] = bad
+
+            max_skewness = policy.max_skewness
+            if max_skewness is not None:
+                bad = [i for i, value in enumerate(metrics['skewness'])
+                       if value > max_skewness]
+                if bad:
+                    reasons.append('element_skewness_exceeded')
+                    element_defects['skewness_violation_indices'] = bad
+
+            min_angle = policy.min_internal_angle_deg
+            max_angle = policy.max_internal_angle_deg
+            if min_angle is not None or max_angle is not None:
+                bad = []
+                for i, angles in enumerate(metrics['internal_angles']):
+                    if any((min_angle is not None and ang < min_angle)
+                           or (max_angle is not None and ang > max_angle)
+                           for ang in angles):
+                        bad.append(i)
+                if bad:
+                    reasons.append('element_angle_out_of_range')
+                    element_defects['angle_violation_indices'] = bad
+
     return {'accepted': not reasons, 'reasons': reasons, 'fingerprint': signature,
             'analysis_matrix': matrix_values, 'geometry': copy.deepcopy(geometry_report),
             'surfaces': surfaces, 'coincident_faces': coincidence,
+            'element_defects': element_defects,
             'elapsed_seconds': time.monotonic()-started, 'visual_approval': 'pending',
             'coverage': {'general_self_intersections': 'not_tested', 'wall_thickness': 'not_tested',
                          'assembly': 'separate_interface_check_required', 'manufacturing': 'not_certified'}}

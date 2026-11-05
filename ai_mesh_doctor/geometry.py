@@ -86,6 +86,34 @@ def analyze_mesh(mesh, matrix, config):
         radial = [e for e in bm.edges if len(e.link_faces) > 2]
         winding = [e for e in bm.edges if e.is_manifold and not e.is_contiguous]
         degenerate = [f for f in bm.faces if f.calc_area() <= config.area_tolerance]
+        # Inverted faces: winding order implies a normal opposing bm.faces.normal.
+        # Project each face onto the plane perpendicular to the dominant axis of its
+        # normal, compute the signed area from the 2D vertex order (shoelace), and
+        # compare the implied normal direction with face.normal. A negative dot
+        # product (signed_area * normal[dominant_axis] < 0) means the winding
+        # opposes the stored normal by more than 90 degrees, so the face is
+        # considered inverted.
+        inverted_faces = []
+        for f in bm.faces:
+            normal = f.normal
+            ax, ay, az = abs(normal.x), abs(normal.y), abs(normal.z)
+            if ax >= ay and ax >= az:
+                pts = [(v.co.y, v.co.z) for v in f.verts]
+                axis_val = normal.x
+            elif ay >= az:
+                pts = [(v.co.x, v.co.z) for v in f.verts]
+                axis_val = normal.y
+            else:
+                pts = [(v.co.x, v.co.y) for v in f.verts]
+                axis_val = normal.z
+            signed_area = 0.0
+            n = len(pts)
+            for i in range(n):
+                x1, y1 = pts[i]
+                x2, y2 = pts[(i + 1) % n]
+                signed_area += x1 * y2 - x2 * y1
+            if signed_area * axis_val < 0:
+                inverted_faces.append(f)
         zero_edges = [e for e in bm.edges if e.calc_length() <= config.distance_tolerance]
         loose_vertices = [v for v in bm.verts if not v.link_edges]
         nonmanifold_vertices = [v for v in bm.verts if not v.is_manifold]
@@ -147,6 +175,7 @@ def analyze_mesh(mesh, matrix, config):
         finding("short_edges", zero_edges)
         finding("loose_edges", wire)
         finding("loose_vertices", loose_vertices)
+        finding("inverted_faces", inverted_faces)
         if duplicates:
             findings.append({"type": "near_duplicate_vertices", "severity": "warning", "confidence": 1.0,
                              "count": len(duplicates), "count_is_lower_bound": duplicate_cap,
@@ -187,6 +216,8 @@ def analyze_mesh(mesh, matrix, config):
             "duplicate_pair_count": len(duplicates), "duplicate_count_is_lower_bound": duplicate_cap,
             "island_count": len(islands), "shells": shells, "regions": regions,
             "closed_topology_candidate": complete_closed, "findings": findings,
+            "inverted_face_count": len(inverted_faces),
+            "inverted_face_indices": sorted(f.index for f in inverted_faces)[:config.max_region_indices],
             "coverage": {"self_intersections": "not_tested", "containment": "not_tested",
                          "assembly_gaps": "not_tested", "symmetry": "not_inferred",
                          "cylindrical_fit": "not_tested", "manufacturing": "not_certified"},

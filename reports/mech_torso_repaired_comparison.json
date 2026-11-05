@@ -1,8 +1,20 @@
 {
-  "timestamp": "2026-10-30T22:32:49Z",
+  "timestamp": "2026-10-30T23:02:17Z",
+  "version": "6.0",
+  "algorithm": "local-per-vertex-planarity",
+  "config": {
+    "sharp_deg": 22.0,
+    "curvature_threshold": 0.1,
+    "protection_hops": 2,
+    "local_flat_var": 0.04,
+    "outlier_edge_factor": 3.0,
+    "taubin_iters": 3,
+    "avg_median_edge": 0.00254,
+    "outlier_threshold_units": 0.00762
+  },
   "input_model": "C:\\Users\\phsra\\OneDrive\\Documents\\Doctor Mesh\\benchmarks\\models\\mech_torso.fbx",
   "output_fbx": "C:\\Users\\phsra\\OneDrive\\Documents\\Doctor Mesh\\benchmarks\\models\\mech_torso_repaired.fbx",
   "objects_count": 103,
-  "total_vertices_projected_to_planes": 302471,
-  "elapsed_seconds": 18.92
+  "total_outlier_verts_corrected": 0,
+  "elapsed_seconds": 19.71
 }
