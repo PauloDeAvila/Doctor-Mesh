@@ -11,6 +11,8 @@ from .planning import validate_plan
 from .reporting import utc_now
 from .validation import validate_change
 from .dependencies import rna_settings
+from .mesh_simplify import simplify_edge_collapse
+from .mesh_subdivide import subdivide_loop
 
 
 def state_signature(obj):
@@ -188,6 +190,20 @@ def _operate(mesh, matrix, plan):
             if not inverted:
                 raise ValueError("No inverted faces to fix")
             bmesh.ops.recalc_face_normals(bm, faces=inverted)
+        elif operation == "simplify_qem":
+            target_ratio = params.get("target_ratio", 0.5)
+            max_iter = params.get("max_iterations", None)
+            n = simplify_edge_collapse(bm, target_ratio=target_ratio,
+                                       protect_boundary=True,
+                                       protect_sharp=True,
+                                       max_iterations=max_iter)
+            if n == 0:
+                raise ValueError("No edges could be collapsed")
+        elif operation == "subdivide_loop":
+            iterations = params.get("iterations", 1)
+            n = subdivide_loop(bm, iterations=iterations, protect_boundary=True)
+            if n <= len(bm.faces):
+                raise ValueError("Subdivision did not increase face count")
         else:
             raise ValueError("Operation is not registered")
         mapping = [v[provenance] for v in bm.verts]

@@ -3,7 +3,8 @@ import math
 
 OPERATIONS = {"recalculate_normals", "merge_vertices", "remove_loose", "fit_plane",
               "smooth_local", "relax_local", "fill_holes", "fix_nonmanifold",
-              "remove_degenerate", "fix_inverted_normals"}
+              "remove_degenerate", "fix_inverted_normals", "simplify_qem",
+              "subdivide_loop"}
 
 
 def validate_plan(plan, report):
@@ -30,7 +31,8 @@ def validate_plan(plan, report):
                "fit_plane": {"origin", "normal", "strength"}, "smooth_local": {"strength", "iterations"},
                "relax_local": {"strength", "iterations"}, "fill_holes": set(),
                "fix_nonmanifold": {"merge_distance"}, "remove_degenerate": {"area_tolerance"},
-               "fix_inverted_normals": set()}[plan["operation"]]
+               "fix_inverted_normals": set(), "simplify_qem": {"target_ratio", "max_iterations"},
+               "subdivide_loop": {"iterations"}}[plan["operation"]]
     if set(params) != allowed:
         raise ValueError("Operation parameters must match the registry exactly")
     for key in ("origin", "normal"):
@@ -48,6 +50,12 @@ def validate_plan(plan, report):
         raise ValueError("Invalid merge distance")
     if "area_tolerance" in params and (type(params["area_tolerance"]) not in (int, float) or not math.isfinite(params["area_tolerance"]) or params["area_tolerance"] <= 0):
         raise ValueError("Invalid area tolerance")
+    if "target_ratio" in params and (type(params["target_ratio"]) not in (int, float) or not math.isfinite(params["target_ratio"]) or not 0 < params["target_ratio"] <= 1):
+        raise ValueError("Invalid target ratio")
+    if "max_iterations" in params and (type(params["max_iterations"]) is not int or params["max_iterations"] < 1):
+        raise ValueError("Invalid max iterations")
+    if "iterations" in params and (type(params["iterations"]) is not int or not 1 <= params["iterations"] <= 10):
+        raise ValueError("Invalid iteration budget")
     constraints = plan["constraints"]
     if set(constraints) != {"max_displacement", "max_dimension_delta", "max_topology_delta", "protected_vertices"}:
         raise ValueError("Explicit geometric constraints required")
