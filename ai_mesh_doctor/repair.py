@@ -98,6 +98,96 @@ def _operate(mesh, matrix, plan):
                 for v, coordinate in updates.items():
                     v.co = coordinate
                 bm.normal_update()
+        elif operation == "fill_holes":
+            bm.edges.ensure_lookup_table()
+            boundary = [e for e in bm.edges if e.is_boundary]
+            if not boundary:
+                raise ValueError("No boundary holes to fill")
+            # Group boundary edges into loops
+            remaining = set(boundary)
+            loops = []
+            while remaining:
+                start = remaining.pop()
+                loop = [start]
+                stack = [start]
+                while stack:
+                    edge = stack.pop()
+                    for vertex in edge.verts:
+                        for adj in vertex.link_edges:
+                            if adj in remaining and adj != start:
+                                remaining.remove(adj)
+                                loop.append(adj)
+                                stack.append(adj)
+                loops.append(loop)
+            # Create faces from each loop
+            for loop in loops:
+                # Get ordered vertices around the loop
+                verts = []
+                for edge in loop:
+                    for v in edge.verts:
+                        if v not in verts:
+                            verts.append(v)
+                if len(verts) >= 3:
+                    try:
+                        bmesh.ops.contextual_create(bm, geom=verts)
+                    except Exception:
+                        # Fallback: create face directly from ordered vertices
+                        bm.faces.new(verts)
+        elif operation == "fix_nonmanifold":
+            bm.edges.ensure_lookup_table()
+            bm.faces.ensure_lookup_table()
+            merge_dist = params.get("merge_distance", 1e-6)
+            radial = [e for e in bm.edges if len(e.link_faces) > 2]
+            if not radial:
+                raise ValueError("No non-manifold radial edges to fix")
+            # Separate faces at radial edges by duplicating vertices
+            # Simple approach: merge vertices within merge_dist to collapse duplicates
+            bmesh.ops.remove_doubles(bm, verts=list(bm.verts), dist=merge_dist)
+            # Re-check after merge
+            bm.normal_update()
+            radial_after = [e for e in bm.edges if len(e.link_faces) > 2]
+            if radial_after:
+                # If still non-manifold, delete the extra faces (conservative)
+                faces_to_delete = set()
+                for e in radial_after:
+                    for f in e.link_faces:
+                        faces_to_delete.add(f)
+                if faces_to_delete:
+                    bmesh.ops.delete(bm, geom=list(faces_to_delete), context="FACES")
+        elif operation == "remove_degenerate":
+            area_tol = params.get("area_tolerance", 1e-12)
+            bm.faces.ensure_lookup_table()
+            degenerate = [f for f in bm.faces if f.calc_area() <= area_tol]
+            if not degenerate:
+                raise ValueError("No degenerate faces to remove")
+            bmesh.ops.delete(bm, geom=degenerate, context="FACES")
+        elif operation == "fix_inverted_normals":
+            bm.faces.ensure_lookup_table()
+            # Detect faces whose winding opposes their normal
+            inverted = []
+            for f in bm.faces:
+                normal = f.normal
+                ax, ay, az = abs(normal.x), abs(normal.y), abs(normal.z)
+                if ax >= ay and ax >= az:
+                    pts = [(v.co.y, v.co.z) for v in f.verts]
+                    axis_val = normal.x
+                elif ay >= az:
+                    pts = [(v.co.x, v.co.z) for v in f.verts]
+                    axis_val = normal.y
+                else:
+                    pts = [(v.co.x, v.co.y) for v in f.verts]
+                    axis_val = normal.z
+                signed_area = 0.0
+                n = len(pts)
+                for i in range(n):
+                    x1, y1 = pts[i]
+                    x2, y2 = pts[(i + 1) % n]
+                    signed_area += x1 * y2 - x2 * y1
+                if signed_area * axis_val < 0:
+                    inverted.append(f)
+            if not inverted:
+                raise ValueError("No inverted faces to fix")
+            bmesh.ops.recalc_face_normals(bm, faces=inverted)
         else:
             raise ValueError("Operation is not registered")
         mapping = [v[provenance] for v in bm.verts]
